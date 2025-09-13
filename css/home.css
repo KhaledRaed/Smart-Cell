@@ -133,8 +133,9 @@
         .homeSec-container {
             max-width: 1200px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.445);
-            backdrop-filter: blur(10px);
+            /* background: rgba(255, 255, 255, 0.445); */
+            background: transparent;
+            backdrop-filter: blur(5px);
             border-radius: 20px;
             padding: 60px 40px;
             box-shadow: 
@@ -143,7 +144,7 @@
             position: relative;
             z-index: 1;
             text-align: center;
-            border: 1px solid rgba(61, 80, 115, 0.1);
+            /* border: 1px solid rgba(61, 80, 115, 0.1); */
         }
 
         .homeSec-logo {
@@ -182,7 +183,8 @@
         .homeSec-subtitle {
             font-family: 'Arial', sans-serif;
             font-size: 1.2rem;
-            color: #ea2528;
+            /* color: #ea2528; */
+            color: #3176ba;
             margin-bottom: 40px;
             font-weight: 600;
         }
@@ -199,7 +201,8 @@
         }
 
         .homeSec-highlight {
-            color: #ea2528;
+            /* color: #ea2528; */
+            color: #3176ba;
             font-weight: bold;
         }
 

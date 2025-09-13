@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Cell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/impact.css">
+    <link rel="stylesheet" href="/css/ourview.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #efeae1;
+            color: #2E2D29;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <section id="header">
+        <header>
+            <nav>
+                <div class="logo-container">
+                    <img src="/media/smartCellLogo.png" alt="Smart Cell Logo" class="logo">
+                    <span class="company-name">Smart Cell for Communication Systems and Contracting</span>
+                </div>
+
+
+                <ul class="nav-links">
+                    <li class="nav-item dropdown">
+                        <a href="/html/about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item"><i class="fas fa-code-branch"></i> Branches</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-phone"></i> Contact Us</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-certificate"></i> Policy &
+                                Certification</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-sitemap"></i> Organization Chart</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-briefcase"></i> Solutions <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item"><i class="fas fa-cogs"></i> Services</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-handshake"></i> Our Clients</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-box"></i> Products</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link login-btn"><i class="fas fa-user"></i> Login</a>
+                    </li>
+                </ul>
+
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </nav>
+        </header>
+    </section>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar">
+        <button class="close-sidebar"><i class="fas fa-times"></i></button>
+        <ul class="sidebar-links">
+            <li class="sidebar-item">
+                <a href="/html/about.html" class="sidebar-link sidebar-toggle" data-dropdown="about-dropdown">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About Us</span>
+                    </div>
+                    <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
+                </a>
+                <div class="sidebar-dropdown" id="about-dropdown">
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Branches</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Contact Us</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Policy & Certification</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Organization Chart</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link sidebar-toggle" data-dropdown="solutions-dropdown">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Solutions</span>
+                    </div>
+                    <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
+                </a>
+                <div class="sidebar-dropdown" id="solutions-dropdown">
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Services</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>Our Clients</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-box"></i>
+                        <span>Products</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" style="color: #3176ba;">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- HOME SECTION -->
+    <section class="homeSec">
+        <div class="homeSec-decorative"></div>
+        <div class="homeSec-decorative"></div>
+
+        <!-- Animated Network Background -->
+        <div class="homeSec-network" id="networkBackground"></div>
+
+        <div class="homeSec-container">
+            <div class="homeSec-logo"></div>
+
+            <h1 class="homeSec-title">Smart Cell</h1>
+            <h2 class="homeSec-subtitle">for Communication Systems and Contracting</h2>
+
+            <div class="homeSec-content">
+                <span class="homeSec-highlight">Innovation</span>, <span class="homeSec-highlight">commitment</span>,
+                and <span class="homeSec-highlight">friendly service</span> are three key features you are sure to
+                experience as our client at <span class="homeSec-company-name">"SES"</span>. We are a leader and
+                trendsetter in catering IT and Telecommunication engineering as business solutions (Including
+                equipment's installation, maintenance and manpower outsourcing). We settle for nothing less than
+                perfection, committed to provide the best services that meets and exceeds your expectations, thus making
+                us the best choice for your needs in business.
+            </div>
+        </div>
+    </section>
+
+
+    <!-- IMPACT COUNTER SECTION -->
+    <section id="impact">
+        <div class="impact-container">
+            <div class="impact-header">
+                <h2 class="impact-title">Our Impact</h2>
+                <p class="impact-subtitle">Key metrics showcasing our telecommunications excellence</p>
+            </div>
+
+            <div class="layout-toggle">
+                <button class="toggle-btn active" onclick="switchLayout('grid')">Grid View</button>
+                <button class="toggle-btn" onclick="switchLayout('horizontal')">Compact View</button>
+            </div>
+
+            <div class="counters-grid" id="gridLayout">
+                <div class="counter-item">
+                    <div class="counter-top">
+                        <i class="fas fa-broadcast-tower counter-icon"></i>
+                        <span class="counter-number">10K+</span>
+                    </div>
+                    <div class="counter-label">Sites Total</div>
+                </div>
+
+                <div class="counter-item">
+                    <div class="counter-top">
+                        <i class="fas fa-calendar-alt counter-icon"></i>
+                        <span class="counter-number">15+</span>
+                    </div>
+                    <div class="counter-label">Years in Business</div>
+                </div>
+
+                <div class="counter-item">
+                    <div class="counter-top">
+                        <i class="fas fa-users counter-icon"></i>
+                        <span class="counter-number">550+</span>
+                    </div>
+                    <div class="counter-label">Team Members</div>
+                </div>
+
+                <div class="counter-item">
+                    <div class="counter-top">
+                        <i class="fas fa-project-diagram counter-icon"></i>
+                        <span class="counter-number">100+</span>
+                    </div>
+                    <div class="counter-label">Projects Total</div>
+                </div>
+            </div>
+
+            <div class="counters-horizontal" id="horizontalLayout">
+                <div class="counter-horizontal">
+                    <i class="fas fa-broadcast-tower counter-icon"></i>
+                    <span class="counter-number">10K+</span>
+                    <div class="counter-label">Sites Total</div>
+                </div>
+
+                <div class="counter-horizontal">
+                    <i class="fas fa-calendar-alt counter-icon"></i>
+                    <span class="counter-number">15+</span>
+                    <div class="counter-label">Years in Business</div>
+                </div>
+
+                <div class="counter-horizontal">
+                    <i class="fas fa-users counter-icon"></i>
+                    <span class="counter-number">550+</span>
+                    <div class="counter-label">Team Members</div>
+                </div>
+
+                <div class="counter-horizontal">
+                    <i class="fas fa-project-diagram counter-icon"></i>
+                    <span class="counter-number">100+</span>
+                    <div class="counter-label">Projects Total</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR VIEW SECTION -->
+    <section id="our-view">
+        <div class="our-view-container">
+            <div class="our-view-content">
+                <div class="section-badge fade-in-up">
+                    <i class="fas fa-eye"></i>
+                    Our Perspective
+                </div>
+
+                <h2 class="our-view-title fade-in-left">Our <span>View</span></h2>
+
+                <p class="our-view-text fade-in-left">
+                    Founded in 2009, <span class="highlight" style="--delay: 0.5s">SMART Cell</span> is a dynamic
+                    company that specializes in Manpower outsourcing & telecom
+                    infrastructure, including Wireless GSM/3G/4G and <span class="highlight"
+                        style="--delay: 1s">5G</span> , Microwave Links, Power Systems, turnkey Civil
+                    works, and <span class="highlight" style="--delay: 1.5s">Fiber Optics</span> , as well as core
+                    networks and data centers. We are dedicated to delivering
+                    outstanding services across these areas, providing customized solutions to meet our clients'
+                    evolving needs. Our expertise encompasses the design, installation, and maintenance of <span
+                        class="highlight" style="--delay: 2s">advanced
+                        communication networks</span> , power systems, and civil infrastructure. We also excel in the
+                    installation,
+                    testing, and maintenance of fiber optic networks, facilitating high-speed data transmission and
+                    connectivity. With over a decade of excellence, SMART Cell is committed to ensuring client
+                    satisfaction through a strong focus on <span class="highlight" style="--delay: 2.5s">quality,
+                        reliability</span> , and customer-centered solutions.
+                </p>
+
+                <div class="stats-row fade-in-up">
+                    <div class="stat-item">
+                        <span class="stat-number">2009</span>
+                        <span class="stat-label">Founded</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Years</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">550+</span>
+                        <span class="stat-label">Experts</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="our-view-video-container fade-in-right">
+                <div class="video-frame">
+                    <video class="our-view-video" loop muted playsinline
+                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect fill='%23f1f5f9' width='800' height='450'/%3E%3Ctext x='400' y='225' text-anchor='middle' fill='%2364748b' font-family='sans-serif' font-size='24'%3EVideo Preview%3C/text%3E%3C/svg%3E">
+                        <source src="/media/SmartCellBK.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay" id="videoPlayBtn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Company Info Section -->
+            <div class="footer-section footer-logo-section">
+                <div class="footer-brand">
+                    <img src="/media/smartCellLogo.png" alt="Smart Cell Logo" class="footer-logo">
+                    <div class="brand-text">
+                        <h2>Smart Cell</h2>
+                    </div>
+                </div>
+                <p class="footer-description">
+                    We are a leading company that specializes in telecommunications infrastructure, wireless networks,
+                    fiber optics, and power systems, dedicated to delivering outstanding services and innovative
+                    solutions.
+                </p>
+            </div>
+
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>Know More About Us</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#mission">Mission & Vision</a></li>
+                    <li><a href="#goals">Our Goals</a></li>
+                    <li><a href="#numbers">Us in Numbers</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Section -->
+            <div class="footer-section">
+                <h3>Discover More</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#projects">Our Projects</a></li>
+                    <li><a href="#clients">Our Clients</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>Get In Touch</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Smart Cell</strong><br>
+                            <a href="https://maps.google.com" target="_blank">Amman, Jordan</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@smartcell.com.jo">info@smartcell.com.jo</a>
+                    </li>
+                </ul>
+                <div class="social-media">
+                    <a href="https://instagram.com/smartcell" class="social-link instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/smartcell" class="social-link linkedin" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://facebook.com/smartcell" class="social-link facebook" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="/js/header.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/impact.js"></script>
+    <script src="/js/ourview.js"></script>
+</body>
+
+</html>

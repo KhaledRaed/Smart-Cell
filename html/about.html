@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Cell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/header.css">,
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #efeae1;
+            color: #2E2D29;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <section id="header">
+        <header>
+            <nav>
+                <div class="logo-container">
+                    <img src="/media/smartCellLogo.png" alt="Smart Cell Logo" class="logo">
+                    <span class="company-name">Smart Cell for Communication Systems and Contracting</span>
+                </div>
+
+
+                <ul class="nav-links">
+                    <li class="nav-item dropdown">
+                        <a href="/html/about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item"><i class="fas fa-code-branch"></i> Branches</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-phone"></i> Contact Us</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-certificate"></i> Policy &
+                                Certification</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-sitemap"></i> Organization Chart</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-briefcase"></i> Solutions <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item"><i class="fas fa-cogs"></i> Services</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-handshake"></i> Our Clients</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-box"></i> Products</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link login-btn"><i class="fas fa-user"></i> Login</a>
+                    </li>
+                </ul>
+
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </nav>
+        </header>
+    </section>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar">
+        <button class="close-sidebar"><i class="fas fa-times"></i></button>
+        <ul class="sidebar-links">
+            <li class="sidebar-item">
+                <a href="/html/about.html" class="sidebar-link sidebar-toggle" data-dropdown="about-dropdown">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About Us</span>
+                    </div>
+                    <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
+                </a>
+                <div class="sidebar-dropdown" id="about-dropdown">
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Branches</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Contact Us</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Policy & Certification</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Organization Chart</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link sidebar-toggle" data-dropdown="solutions-dropdown">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Solutions</span>
+                    </div>
+                    <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
+                </a>
+                <div class="sidebar-dropdown" id="solutions-dropdown">
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Services</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>Our Clients</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-box"></i>
+                        <span>Products</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" style="color: #3176ba;">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+    <!-- JS Section -->
+    <script src="../js/header.js"></script>
+</body>
+
+</html>

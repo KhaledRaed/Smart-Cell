@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/header.css">,
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/footer.css">
 
     <style>
         * {
@@ -72,83 +74,145 @@
     </section>
 
     <!-- Sidebar Menu -->
-    <div class="sidebar">
-        <button class="close-sidebar"><i class="fas fa-times"></i></button>
-        <ul class="sidebar-links">
-            <li class="sidebar-item">
-                <a href="/html/about.html" class="sidebar-link sidebar-toggle" data-dropdown="about-dropdown">
-                    <div class="sidebar-link-content">
-                        <i class="fas fa-info-circle"></i>
-                        <span>About Us</span>
+    <section id="about">
+        <div class="about-container">
+            <!-- Left: Mission & Vision -->
+            <div class="about-left">
+                <h2 class="about-title">Our <span>Mission & Vision</span></h2>
+
+                <!-- Mission Card -->
+                <div class="about-card fade-element">
+                    <i class="fas fa-bullseye card-icon"></i>
+                    <h3>Mission</h3>
+                    <p>
+                        Our vision at SMART Cell is to become a global leader in cutting-edge
+                        telecom infrastructure, power systems, civil works, and fiber optics solutions.
+                        We're committed to driving the future of communication and connectivity
+                        through technology, innovation, and sustainability.
+                    </p>
+                </div>
+
+                <!-- Vision Card -->
+                <div class="about-card fade-element">
+                    <i class="fas fa-lightbulb card-icon"></i>
+                    <h3>Vision</h3>
+                    <p>
+                        At SMART Cell, our mission is to revolutionize global connectivity by
+                        combining our telecom infrastructure, power systems, civil works,
+                        and fiber optics expertise. We're committed to providing innovative,
+                        sustainable solutions for businesses and communities.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right: Values -->
+            <div class="about-right">
+                <h2 class="about-title">Our <span>Values</span></h2>
+                <div class="values-grid">
+                    <div class="value-item fade-element"><i class="fas fa-handshake"></i>
+                        <div><strong>Integrity</strong> Upholding the highest ethical standards</div>
                     </div>
-                    <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
-                </a>
-                <div class="sidebar-dropdown" id="about-dropdown">
-                    <a href="#" class="sidebar-dropdown-item">
-                        <i class="fas fa-code-branch"></i>
-                        <span>Branches</span>
+                    <div class="value-item fade-element"><i class="fas fa-award"></i>
+                        <div><strong>Quality Excellence</strong> Delivering top-notch solutions</div>
+                    </div>
+                    <div class="value-item fade-element"><i class="fas fa-users"></i>
+                        <div><strong>Customer Focus</strong> Putting clients at the center</div>
+                    </div>
+                    <div class="value-item fade-element"><i class="fas fa-lightbulb"></i>
+                        <div><strong>Innovation</strong> Embracing creativity & adaptability</div>
+                    </div>
+                    <div class="value-item fade-element"><i class="fas fa-leaf"></i>
+                        <div><strong>Sustainability</strong> Prioritizing environmental responsibility</div>
+                    </div>
+                    <div class="value-item fade-element"><i class="fas fa-shield-alt"></i>
+                        <div><strong>Safety</strong> Ensuring a safe and healthy environment</div>
+                    </div>
+                    <div class="value-item fade-element"><i class="fas fa-graduation-cap"></i>
+                        <div><strong>Growth</strong> Nurturing skills & knowledge</div>
+                    </div>
+                    <div class="value-item fade-element"><i class="fas fa-people-carry"></i>
+                        <div><strong>Teamwork</strong> Collaborating for success</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Company Info Section -->
+            <div class="footer-section footer-logo-section">
+                <div class="footer-brand">
+                    <img src="../media/smartCellLogo.png" alt="Smart Cell Logo" class="footer-logo">
+                    <div class="brand-text">
+                        <h2>Smart Cell</h2>
+                    </div>
+                </div>
+                <p class="footer-description">
+                    We are a leading company that specializes in telecommunications infrastructure, wireless networks,
+                    fiber optics, and power systems, dedicated to delivering outstanding services and innovative
+                    solutions.
+                </p>
+            </div>
+
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>Know More About Us</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#mission">Mission &amp; Vision</a></li>
+                    <li><a href="#goals">Our Goals</a></li>
+                    <li><a href="#numbers">Us in Numbers</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Section -->
+            <div class="footer-section">
+                <h3>Discover More</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#projects">Our Projects</a></li>
+                    <li><a href="#clients">Our Clients</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>Get In Touch</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Smart Cell</strong><br>
+                            <a href="https://maps.google.com" target="_blank">Amman, Jordan</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@smartcell.com.jo">info@smartcell.com.jo</a>
+                    </li>
+                </ul>
+                <div class="social-media">
+                    <a href="https://instagram.com/smartcell" class="social-link instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="sidebar-dropdown-item">
-                        <i class="fas fa-phone"></i>
-                        <span>Contact Us</span>
+                    <a href="https://linkedin.com/company/smartcell" class="social-link linkedin" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="sidebar-dropdown-item">
-                        <i class="fas fa-certificate"></i>
-                        <span>Policy & Certification</span>
-                    </a>
-                    <a href="#" class="sidebar-dropdown-item">
-                        <i class="fas fa-sitemap"></i>
-                        <span>Organization Chart</span>
+                    <a href="https://facebook.com/smartcell" class="social-link facebook" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
                     </a>
                 </div>
-            </li>
-            <li class="sidebar-item">
-                <a href="#" class="sidebar-link sidebar-toggle" data-dropdown="solutions-dropdown">
-                    <div class="sidebar-link-content">
-                        <i class="fas fa-briefcase"></i>
-                        <span>Solutions</span>
-                    </div>
-                    <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
-                </a>
-                <div class="sidebar-dropdown" id="solutions-dropdown">
-                    <a href="#" class="sidebar-dropdown-item">
-                        <i class="fas fa-cogs"></i>
-                        <span>Services</span>
-                    </a>
-                    <a href="#" class="sidebar-dropdown-item">
-                        <i class="fas fa-handshake"></i>
-                        <span>Our Clients</span>
-                    </a>
-                    <a href="#" class="sidebar-dropdown-item">
-                        <i class="fas fa-box"></i>
-                        <span>Products</span>
-                    </a>
-                </div>
-            </li>
-            <li class="sidebar-item">
-                <a href="#" class="sidebar-link">
-                    <div class="sidebar-link-content">
-                        <i class="fas fa-home"></i>
-                        <span>Home</span>
-                    </div>
-                </a>
-            </li>
-            <li class="sidebar-item">
-                <a href="#" class="sidebar-link" style="color: #3176ba;">
-                    <div class="sidebar-link-content">
-                        <i class="fas fa-user"></i>
-                        <span>Login</span>
-                    </div>
-                </a>
-            </li>
-        </ul>
-    </div>
-
-
-
+            </div>
+        </div>
+    </footer>
 
     <!-- JS Section -->
     <script src="../js/header.js"></script>
+    <script src="../js/about.js"></script>
 </body>
 
 </html>

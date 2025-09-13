@@ -1,0 +1,223 @@
+#about {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #e8edf3 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 40px;
+}
+
+/* Floating background elements */
+#about::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 700px;
+    height: 700px;
+    background: linear-gradient(135deg, rgba(49, 118, 186, 0.06), rgba(192, 52, 53, 0.06));
+    border-radius: 50%;
+    animation: floatAbout 18s ease-in-out infinite;
+    z-index: 0;
+}
+
+#about::after {
+    content: '';
+    position: absolute;
+    bottom: -25%;
+    left: -15%;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, rgba(61, 80, 115, 0.06), rgba(49, 118, 186, 0.06));
+    border-radius: 50%;
+    animation: floatAbout 22s ease-in-out infinite reverse;
+    z-index: 0;
+}
+
+@keyframes floatAbout {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(-25px, -20px) rotate(90deg);
+    }
+
+    50% {
+        transform: translate(20px, -15px) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(-10px, 25px) rotate(270deg);
+    }
+}
+
+/* Container */
+.about-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Badge */
+.about-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #3176ba, #c03435);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 18px rgba(49, 118, 186, 0.3);
+}
+
+/* Titles */
+.about-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #2e2d29;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+.about-title span {
+    background: linear-gradient(135deg, #3176ba, #c03435);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+/* About Cards */
+.about-card {
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.about-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #3176ba;
+}
+
+.about-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #3d5073;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Icons */
+.card-icon {
+    font-size: 2rem;
+    color: #c03435;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.value-item i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+    color: #3176ba;
+}
+
+/* Values Grid */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.value-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #3d5073;
+    display: flex;
+    align-items: flex-start;
+}
+
+.value-item strong {
+    display: block;
+    font-size: 1.05rem;
+    color: #3176ba;
+    margin-bottom: 6px;
+}
+
+.value-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* Scroll Animation */
+.fade-element {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-title {
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: 60px 20px;
+    }
+
+    .about-title {
+        font-size: 2.5rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-badge {
+        font-size: 0.8rem;
+        padding: 6px 16px;
+    }
+}

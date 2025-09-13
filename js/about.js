@@ -1,18 +1,14 @@
- const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".fade-element");
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all elements with animation classes
-        document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .fade-in-scale');
-            animatedElements.forEach(el => observer.observe(el));
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // animate only once
+            }
         });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+});

@@ -13,14 +13,13 @@
             justify-content: flex-end;
         }
 
-        /* Modern Footer Styling to match Our View section */
         .footer {
             background: linear-gradient(135deg, #3d5073 0%, #2a3f5f 100%);
             position: relative;
             overflow: hidden;
         }
 
-        /* Subtle geometric patterns instead of bubbles */
+        /* Subtle geometric patterns*/
         .footer::before {
             content: '';
             position: absolute;
@@ -46,7 +45,7 @@
             z-index: 2;
         }
 
-        /* Logo Section with modern styling */
+        /* Logo Section */
         .footer-logo-section {
             display: flex;
             flex-direction: column;
@@ -89,7 +88,7 @@
             margin-bottom: 30px;
         }
 
-        /* Section headers with modern badge style */
+        /* Section headers */
         .footer-section h3 {
             color: #ffffff;
             font-size: 1rem;
@@ -116,7 +115,7 @@
             border-radius: 50%;
         }
 
-        /* Modern link styling */
+        /* link styling */
         .footer-links {
             list-style: none;
         }
@@ -201,7 +200,7 @@
             font-weight: 600;
         }
 
-        /* Modern social media buttons */
+        /* social media buttons */
         .social-media {
             display: flex;
             gap: 15px;
@@ -268,39 +267,7 @@
         .social-link.facebook::before {
             background: linear-gradient(135deg, #1877f2, #42a5f5);
         }
-
-        /* Stats section to match our view */
-        .footer-stats {
-            display: flex;
-            gap: 40px;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat-item {
-            text-align: left;
-        }
-
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #3176ba;
-            display: block;
-            margin-bottom: 5px;
-            background: linear-gradient(135deg, #3176ba, #4a90e2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-label {
-            font-size: 0.75rem;
-            color: rgba(239, 234, 225, 0.7);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        
 
         /* Responsive Design */
         @media (max-width: 1200px) {
@@ -342,11 +309,6 @@
                 font-size: 1.5rem;
             }
 
-            .footer-stats {
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-
             .social-media {
                 justify-content: center;
             }
@@ -361,33 +323,4 @@
                 font-size: 0.9rem;
                 padding: 6px 12px;
             }
-
-            .footer-stats {
-                justify-content: center;
-                text-align: center;
-            }
-        }
-
-        /* Placeholder for demo */
-        .demo-content {
-            padding: 100px 20px;
-            text-align: center;
-            color: #3d5073;
-        }
-
-        .demo-content h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #3176ba, #c03435);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .demo-content p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto;
         }

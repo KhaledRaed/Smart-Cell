@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffffff;
+}
+
+/* Branches Section */
+.branches-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #e8edf3 100%);
+    padding: 100px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.branches-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Badge */
+.branches-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #3176ba, #c03435);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 18px rgba(49, 118, 186, 0.3);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+
+.branches-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #2e2d29;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    text-align: center;
+}
+
+.branches-title span {
+    background: linear-gradient(135deg, #3176ba, #c03435);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.branches-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #3d5073;
+    margin-bottom: 60px;
+    line-height: 1.6;
+}
+
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.branch-panel {
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.branch-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #3176ba, #c03435);
+}
+
+.branch-panel:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.branch-icon {
+    font-size: 2.5rem;
+    color: #3176ba;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.branch-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2e2d29;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.branch-location {
+    font-size: 1rem;
+    color: #c03435;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.branch-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #3d5073;
+    margin-bottom: 25px;
+}
+
+.branch-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid #e8edf3;
+}
+
+.branch-cta a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #3176ba;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.branch-cta a:hover {
+    background: #f1f5f9;
+    color: #c03435;
+    transform: translateX(5px);
+}
+
+.branch-cta a i {
+    font-size: 0.9rem;
+    width: 16px;
+}
+
+/* Special styling for head office */
+.branch-panel.head-office {
+    background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.branch-panel.head-office::before {
+    height: 6px;
+}
+
+/* Scroll Animation */
+.fade-element {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .branches-title {
+        font-size: 3rem;
+    }
+    
+    .branches-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .branches-section {
+        padding: 60px 20px;
+    }
+
+    .branches-title {
+        font-size: 2.5rem;
+    }
+
+    .branches-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .branches-title {
+        font-size: 2rem;
+    }
+
+    .branches-badge {
+        font-size: 0.8rem;
+        padding: 6px 16px;
+    }
+
+    .branch-cta {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

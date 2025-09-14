@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/about.css">
-    <link rel="stylesheet" href="../css/branches.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/branches.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <style>
         * {
             margin: 0;
@@ -21,7 +21,7 @@
         }
 
         body {
-            background-color: #efeae1;
+            background-color: #ffffff;
             color: #2E2D29;
             min-height: 100vh;
             padding-top: 80px;
@@ -35,20 +35,20 @@
         <header>
             <nav>
                 <div class="logo-container">
-                    <img src="/media/smartCellLogo.png" alt="Smart Cell Logo" class="logo">
-                    <span class="company-name">Smart Cell for Communication Systems and Contracting</span>
+                    <img src="../media/smartCellLogo.png" alt="Smart Cell Logo" class="logo">
+                    <!-- <span class="company-name">Smart Cell for Communication Systems and Contracting</span> -->
                 </div>
 
 
                 <ul class="nav-links">
                     <li class="nav-item dropdown">
-                        <a href="/html/about.html" class="nav-link">
+                        <a href="../html/about.html" class="nav-link">
                             <i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item"><i class="fas fa-code-branch"></i> Branches</a>
                             <a href="#" class="dropdown-item"><i class="fas fa-phone"></i> Contact Us</a>
-                            <a href="#" class="dropdown-item"><i class="fas fa-certificate"></i> Policy &
+                            <a href="#" class="dropdown-item"><i class="fas fa-certificate"></i> Policy &amp;
                                 Certification</a>
                             <a href="#" class="dropdown-item"><i class="fas fa-sitemap"></i> Organization Chart</a>
                         </div>
@@ -63,7 +63,8 @@
                             <a href="#" class="dropdown-item"><i class="fas fa-box"></i> Products</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="/html/index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a href="/html/index.html" class="nav-link"><i class="fas fa-home"></i>
+                            Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link login-btn"><i class="fas fa-user"></i> Login</a>
                     </li>
                 </ul>
@@ -74,6 +75,78 @@
     </section>
 
     <!-- Sidebar Menu -->
+    <div class="sidebar">
+        <button class="close-sidebar"><i class="fas fa-times"></i></button>
+        <ul class="sidebar-links">
+            <li class="sidebar-item">
+                <a href="/html/about.html" class="sidebar-link sidebar-toggle" data-dropdown="about-dropdown">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About Us</span>
+                    </div>
+                    <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
+                </a>
+                <div class="sidebar-dropdown" id="about-dropdown">
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Branches</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Contact Us</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Policy &amp; Certification</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Organization Chart</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link sidebar-toggle" data-dropdown="solutions-dropdown">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Solutions</span>
+                    </div>
+                    <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
+                </a>
+                <div class="sidebar-dropdown" id="solutions-dropdown">
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Services</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>Our Clients</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-box"></i>
+                        <span>Products</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" style="color: #3176ba;">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
     <section id="about">
         <div class="about-container">
             <!-- Main Grid for Mission/Vision and Values -->
@@ -219,6 +292,57 @@
     </section>
 
     <!-- Branches Section -->
+    <section class="branches-section fade-element" aria-labelledby="branches-heading">
+        <div class="branches-container">
+            <div class="branches-badge">
+                <i class="fas fa-map-marker-alt"></i>
+                Our Locations
+            </div>
+
+            <h2 id="branches-heading" class="branches-title">
+                Our <span>Branches</span>
+            </h2>
+
+            <p class="branches-subtitle">
+                Delivering excellence across the Middle East and North Africa with innovation and world-class execution.
+            </p>
+
+            <div class="branches-grid">
+                <!-- Jordan - Head Office -->
+                <div class="branch-panel head-office fade-element">
+                    <div class="branch-name">Jordan — Head Office</div>
+                    <div class="branch-location">Amman</div>
+                    <div class="branch-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius minus dignissimos eligendi quidem
+                        maxime veniam optio eos, sequi officia, delectus dolores asperiores dicta quos suscipit et
+                        voluptates repellendus sapiente magni?
+                    </div>
+                </div>
+
+                <!-- Egypt -->
+                <div class="branch-panel fade-element">
+                    <div class="branch-name">Egypt</div>
+                    <div class="branch-location">Cairo</div>
+                    <div class="branch-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos asperiores perferendis libero
+                        dolores, illo eius animi sunt! Id, enim. A, autem laborum tempore unde nesciunt quos odit
+                        corporis quaerat magnam?
+                    </div>
+                </div>
+
+                <!-- Saudi Arabia -->
+                <div class="branch-panel fade-element">
+                    <div class="branch-name">Saudi Arabia</div>
+                    <div class="branch-location">Riyadh</div>
+                    <div class="branch-desc">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo voluptatem facilis earum
+                        blanditiis cumque, aut autem. Quaerat necessitatibus qui voluptas amet, hic, praesentium,
+                        consequuntur at ullam quis architecto repellat mollitia!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Section -->
     <footer class="footer">
@@ -292,9 +416,9 @@
     </footer>
 
     <!-- JS Section -->
-    <script src="../js/header.js"></script>
-    <script src="../js/about.js"></script>
-    <script src="../js/branches.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/about.js"></script>
+    <script src="/js/branche.js"></script>
 </body>
 
 </html>

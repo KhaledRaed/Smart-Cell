@@ -19,37 +19,7 @@
             overflow: hidden;
         }
 
-        /* Animated background elements */
-        #our-view::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: linear-gradient(135deg, rgba(49, 118, 186, 0.05), rgba(192, 52, 53, 0.05));
-            border-radius: 50%;
-            animation: float 20s ease-in-out infinite;
-        }
 
-        #our-view::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 600px;
-            height: 600px;
-            background: linear-gradient(135deg, rgba(61, 80, 115, 0.05), rgba(49, 118, 186, 0.05));
-            border-radius: 50%;
-            animation: float 25s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-20px, -30px) rotate(90deg); }
-            50% { transform: translate(20px, -20px) rotate(180deg); }
-            75% { transform: translate(-10px, 20px) rotate(270deg); }
-        }
 
         .our-view-container {
             max-width: 1400px;

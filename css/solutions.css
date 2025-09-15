@@ -30,6 +30,7 @@
 
     /* optional: center items on last row */
     justify-items: center;
+    justify-content: center;
 
     grid-template-rows:auto;
 
@@ -40,26 +41,43 @@
 
 /* this class is for having a modular border around the cards with the original gradient , to have the correct border radius follow the formula : 
 
-    wrapper border radius = inner card border radius + wrapper padding
+    ! wrapper border radius = inner card border radius + wrapper padding
 
 */
 .service-card-wrapper{
+    transition: 0.3s;
+
+    width: 100%;
+    height: 100%;
+
     background: linear-gradient(135deg, #3176ba, #c03435);
     border-radius: 20px;
     padding: 10px;
 }
+.service-card-wrapper:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    /* transform: scale(1.03); */
+}
+.service-card-wrapper:active{
+    transform: translateY(+10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    /* transform: scale(1.03); */
+    height: 300px;
+}
 
 .service-card{
-    min-height: 300px;
+    /* min-height: 300px; */
     height: 100%;
+    /* height: fit-content; */
     min-width: 170px;
     width: 100%;
 
     /* border: solid red 1px; */
     
     display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 1fr auto;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: fit-content auto;
     gap :20px;
 
     align-items: center;

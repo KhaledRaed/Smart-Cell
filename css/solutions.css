@@ -1,0 +1,81 @@
+#services{
+    
+}
+.services-container{
+    
+}
+
+.services-title{
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #2e2d29;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+.services-title span {
+    background: linear-gradient(135deg, #3176ba, #c03435);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.services-cards-container{
+    display: grid;
+    /* grid-template-columns: repeat(3,1fr); */
+    /* grid-template-columns: repeat(auto-fit,minmax(170px,1fr)); */
+
+    /* flexible responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    /* optional: center items on last row */
+    justify-items: center;
+
+    grid-template-rows:auto;
+
+    gap: 20px;
+
+    padding: 20px;
+}
+
+/* this class is for having a modular border around the cards with the original gradient , to have the correct border radius follow the formula : 
+
+    wrapper border radius = inner card border radius + wrapper padding
+
+*/
+.service-card-wrapper{
+    background: linear-gradient(135deg, #3176ba, #c03435);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.service-card{
+    min-height: 300px;
+    height: 100%;
+    min-width: 170px;
+    width: 100%;
+
+    /* border: solid red 1px; */
+    
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
+    gap :20px;
+
+    align-items: center;
+
+    padding: 10px;
+    background-color: #efeae1;
+    border-radius: 10px;
+
+}
+
+.service-icon{
+    height: 30px;
+}
+.service-card p{
+    grid-area: 2/1/3/3;
+}
+.service-card h3{
+    
+}

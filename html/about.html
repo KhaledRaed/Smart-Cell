@@ -7,6 +7,11 @@
     <title>Smart Cell</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/about.css">
@@ -17,7 +22,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
         }
 
         body {
@@ -39,7 +45,6 @@
                     <!-- <span class="company-name">Smart Cell for Communication Systems and Contracting</span> -->
                 </div>
 
-
                 <ul class="nav-links">
                     <li class="nav-item dropdown">
                         <a href="../html/about.html" class="nav-link">
@@ -47,10 +52,11 @@
                         </a>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item"><i class="fas fa-code-branch"></i> Branches</a>
-                            <a href="#" class="dropdown-item"><i class="fas fa-phone"></i> Contact Us</a>
-                            <a href="#" class="dropdown-item"><i class="fas fa-certificate"></i> Policy &amp;
+                            <a href="#" class="dropdown-item"><i class="fas fa-certificate"></i> Policy &
                                 Certification</a>
                             <a href="#" class="dropdown-item"><i class="fas fa-sitemap"></i> Organization Chart</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-phone"></i> Contact Us</a>
+
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -97,7 +103,7 @@
                     </a>
                     <a href="#" class="sidebar-dropdown-item">
                         <i class="fas fa-certificate"></i>
-                        <span>Policy &amp; Certification</span>
+                        <span>Policy & Certification</span>
                     </a>
                     <a href="#" class="sidebar-dropdown-item">
                         <i class="fas fa-sitemap"></i>
@@ -147,143 +153,159 @@
         </ul>
     </div>
 
-    <section id="about">
-        <div class="about-container">
-            <!-- Main Grid for Mission/Vision and Values -->
-            <div class="about-main-grid">
-                <!-- Left: Mission & Vision -->
-                <div class="about-left">
-                    <h2 class="about-title">Our <span>Mission & Vision</span></h2>
+    <!-- About -->
+    <section class="about-section">
+        <!-- Mission & Vision Cards -->
+        <div class="mission-vision">
+            <div class="card fade-element">
+                <div class="card-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>At SMART Cell, our mission is to revolutionize global connectivity by combining our telecom
+                    infrastructure, power systems, civil works, and fiber optics expertise. We're committed to providing
+                    innovative, sustainable solutions for businesses and communities.</p>
+            </div>
 
-                    <!-- Mission Card -->
-                    <div class="about-card fade-element">
-                        <i class="fas fa-bullseye card-icon"></i>
-                        <h3>Mission</h3>
-                        <p>
-                            Our vision at SMART Cell is to become a global leader in cutting-edge
-                            telecom infrastructure, power systems, civil works, and fiber optics solutions.
-                            We're committed to driving the future of communication and connectivity
-                            through technology, innovation, and sustainability.
-                        </p>
-                    </div>
+            <div class="card fade-element">
+                <div class="card-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>Our vision at SMART Cell is to become a global leader in cutting-edge telecom infrastructure, power
+                    systems, civil works, and fiber optics solutions. We're committed to driving the future of
+                    communication and connectivity through technology, innovation, and sustainability.</p>
+            </div>
+        </div>
 
-                    <!-- Vision Card -->
-                    <div class="about-card fade-element">
-                        <i class="fas fa-lightbulb card-icon"></i>
-                        <h3>Vision</h3>
-                        <p>
-                            At SMART Cell, our mission is to revolutionize global connectivity by
-                            combining our telecom infrastructure, power systems, civil works,
-                            and fiber optics expertise. We're committed to providing innovative,
-                            sustainable solutions for businesses and communities.
-                        </p>
+        <!-- Values Section -->
+        <div class="values-section">
+            <h2 class="section-title">Our Core <span>Values</span></h2>
+            <div class="values-grid">
+                <div class="value-item fade-element">
+                    <i class="fas fa-handshake"></i>
+                    <div>
+                        <strong>Integrity</strong>
+                        Upholding the highest ethical standards
                     </div>
                 </div>
-
-                <!-- Right: Values -->
-                <div class="about-right">
-                    <h2 class="about-title">Our <span>Values</span></h2>
-                    <div class="values-grid">
-                        <div class="value-item fade-element">
-                            <i class="fas fa-handshake"></i>
-                            <div><strong>Integrity</strong> Upholding the highest ethical standards</div>
-                        </div>
-                        <div class="value-item fade-element">
-                            <i class="fas fa-award"></i>
-                            <div><strong>Quality Excellence</strong> Delivering top-notch solutions</div>
-                        </div>
-                        <div class="value-item fade-element">
-                            <i class="fas fa-users"></i>
-                            <div><strong>Customer Focus</strong> Putting clients at the center</div>
-                        </div>
-                        <div class="value-item fade-element">
-                            <i class="fas fa-lightbulb"></i>
-                            <div><strong>Innovation</strong> Embracing creativity & adaptability</div>
-                        </div>
-                        <div class="value-item fade-element">
-                            <i class="fas fa-leaf"></i>
-                            <div><strong>Sustainability</strong> Prioritizing environmental responsibility</div>
-                        </div>
-                        <div class="value-item fade-element">
-                            <i class="fas fa-shield-alt"></i>
-                            <div><strong>Safety</strong> Ensuring a safe and healthy environment</div>
-                        </div>
-                        <div class="value-item fade-element">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div><strong>Growth</strong> Nurturing skills & knowledge</div>
-                        </div>
-                        <div class="value-item fade-element">
-                            <i class="fas fa-people-carry"></i>
-                            <div><strong>Teamwork</strong> Collaborating for success</div>
-                        </div>
+                <div class="value-item fade-element">
+                    <i class="fas fa-award"></i>
+                    <div>
+                        <strong>Quality Excellence</strong>
+                        Delivering top-notch solutions
+                    </div>
+                </div>
+                <div class="value-item fade-element">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <strong>Customer Focus</strong>
+                        Putting clients at the center
+                    </div>
+                </div>
+                <div class="value-item fade-element">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <strong>Innovation</strong>
+                        Embracing creativity & adaptability
+                    </div>
+                </div>
+                <div class="value-item fade-element">
+                    <i class="fas fa-leaf"></i>
+                    <div>
+                        <strong>Sustainability</strong>
+                        Prioritizing environmental responsibility
+                    </div>
+                </div>
+                <div class="value-item fade-element">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <strong>Safety</strong>
+                        Ensuring a safe and healthy environment
+                    </div>
+                </div>
+                <div class="value-item fade-element">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div>
+                        <strong>Growth</strong>
+                        Nurturing skills & knowledge
+                    </div>
+                </div>
+                <div class="value-item fade-element">
+                    <i class="fas fa-people-carry"></i>
+                    <div>
+                        <strong>Teamwork</strong>
+                        Collaborating for success
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Achievements Section -->
-            <div class="achievements-section">
-                <h2 class="achievements-title">Our <span>Achievements</span></h2>
-
-                <div class="achievements-grid">
-                    <!-- Achievement 1: Huawei-Zain Network -->
-                    <div class="achievement-card fade-element">
-                        <i class="fas fa-network-wired achievement-icon"></i>
-                        <h3>Huawei - Zain Network Project</h3>
-                        <p>Successfully delivered comprehensive survey and swap operations for the Zain network
-                            infrastructure, demonstrating our expertise in large-scale telecom projects.</p>
-
-                        <div class="achievement-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">1,100</span>
-                                <span class="stat-label">Sites Delivered</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">200+</span>
-                                <span class="stat-label">Projects</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">5</span>
-                                <span class="stat-label">Months</span>
-                            </div>
+        <!-- Achievements Section -->
+        <div class="achievements-section">
+            <h2 class="section-title">Our <span>Achievements</span></h2>
+            <div class="achievements-grid">
+                <!-- Huawei-Zain Network Project -->
+                <div class="achievement-card fade-element">
+                    <div class="achievement-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Huawei - Zain Network Project</h3>
+                    <p>Successfully delivered comprehensive survey and swap operations for the Zain network
+                        infrastructure, demonstrating our expertise in large-scale telecom projects.</p>
+                    <div class="achievement-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">1,100</span>
+                            <span class="stat-label">Sites Delivered</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Months</span>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Achievement 2: TASC Tower Audit -->
-                    <div class="achievement-card fade-element">
-                        <i class="fas fa-search-location achievement-icon"></i>
-                        <h3>TASC Tower - Zain Network Audit</h3>
-                        <p>Conducted comprehensive site audits and surveys across the Zain network infrastructure,
-                            ensuring optimal performance and compliance standards.</p>
-
-                        <div class="achievement-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">2,800</span>
-                                <span class="stat-label">Sites Audited</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">9</span>
-                                <span class="stat-label">Months</span>
-                            </div>
+                <!-- TASC Tower Audit -->
+                <div class="achievement-card fade-element">
+                    <div class="achievement-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3>TASC Tower - Zain Network Audit</h3>
+                    <p>Conducted comprehensive site audits and surveys across the Zain network infrastructure, ensuring
+                        optimal performance and compliance standards.</p>
+                    <div class="achievement-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">2,800</span>
+                            <span class="stat-label">Sites Audited</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">9</span>
+                            <span class="stat-label">Months</span>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Achievement 3: Coral Bridge Cable -->
-                    <div class="achievement-card cable-achievement fade-element">
-                        <i class="fas fa-ship achievement-icon"></i>
-                        <h3>Coral Bridge Submarine Cable Landing</h3>
-                        <p>SMART Cell played a key role in the successful landing of the "Coral Bridge" submarine cable
-                            in Aqaba – a vital link connecting Egypt and Jordan. Our team prepared the infrastructure
-                            from beach to digital hub and managed the cable pulling operations.</p>
-
-                        <div class="achievement-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">1</span>
-                                <span class="stat-label">Major Cable Landing</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">2</span>
-                                <span class="stat-label">Countries Connected</span>
-                            </div>
+                <!-- Coral Bridge Submarine Cable -->
+                <div class="achievement-card cable-achievement fade-element">
+                    <div class="achievement-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Coral Bridge Submarine Cable Landing</h3>
+                    <p>SMART Cell played a key role in the successful landing of the "Coral Bridge" submarine cable in
+                        Aqaba – a vital link connecting Egypt and Jordan. Our team prepared the infrastructure from
+                        beach to digital hub and managed the cable pulling operations.</p>
+                    <div class="achievement-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Major Cable Landing</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Countries Connected</span>
                         </div>
                     </div>
                 </div>
@@ -291,56 +313,82 @@
         </div>
     </section>
 
+
     <!-- Branches Section -->
-    <section class="branches-section fade-element" aria-labelledby="branches-heading">
+    <section class="branches-section">
         <div class="branches-container">
-            <div class="branches-badge">
-                <i class="fas fa-map-marker-alt"></i>
-                Our Locations
-            </div>
-
-            <h2 id="branches-heading" class="branches-title">
-                Our <span>Branches</span>
-            </h2>
-
-            <p class="branches-subtitle">
-                Delivering excellence across the Middle East and North Africa with innovation and world-class execution.
-            </p>
+            <h2 class="section-title">Our Branches</h2>
+            <p class="section-subtitle">Click a branch to view details</p>
 
             <div class="branches-grid">
-                <!-- Jordan - Head Office -->
-                <div class="branch-panel head-office fade-element">
-                    <div class="branch-name">Jordan — Head Office</div>
-                    <div class="branch-location">Amman</div>
-                    <div class="branch-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius minus dignissimos eligendi quidem
-                        maxime veniam optio eos, sequi officia, delectus dolores asperiores dicta quos suscipit et
-                        voluptates repellendus sapiente magni?
-                    </div>
+                <div class="branch-card jordan" onclick="toggleBranch('jordan')">
+                    <span class="country-flag">🇯🇴</span>
+                    <h3 class="country-name">Jordan</h3>
+                    <p class="branch-hint">Click to explore</p>
                 </div>
-
-                <!-- Egypt -->
-                <div class="branch-panel fade-element">
-                    <div class="branch-name">Egypt</div>
-                    <div class="branch-location">Cairo</div>
-                    <div class="branch-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos asperiores perferendis libero
-                        dolores, illo eius animi sunt! Id, enim. A, autem laborum tempore unde nesciunt quos odit
-                        corporis quaerat magnam?
-                    </div>
+                <div class="branch-card egypt" onclick="toggleBranch('egypt')">
+                    <span class="country-flag">🇪🇬</span>
+                    <h3 class="country-name">Egypt</h3>
+                    <p class="branch-hint">Click to explore</p>
                 </div>
+                <div class="branch-card saudi" onclick="toggleBranch('saudi')">
+                    <span class="country-flag">🇸🇦</span>
+                    <h3 class="country-name">Saudi Arabia</h3>
+                    <p class="branch-hint">Click to explore</p>
+                </div>
+            </div>
 
-                <!-- Saudi Arabia -->
-                <div class="branch-panel fade-element">
-                    <div class="branch-name">Saudi Arabia</div>
-                    <div class="branch-location">Riyadh</div>
-                    <div class="branch-desc">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo voluptatem facilis earum
-                        blanditiis cumque, aut autem. Quaerat necessitatibus qui voluptas amet, hic, praesentium,
-                        consequuntur at ullam quis architecto repellat mollitia!
+            <!-- Jordan -->
+            <div id="branch-jordan" class="branch-details">
+                <button class="close-btn" onclick="closeBranch()">×</button>
+                <div class="details-content">
+                    <div class="branch-info">
+                        <h3>Jordan Branch</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste
+                            natus error sit.</p>
+                    </div>
+                    <div class="map-container">
+                        <div class="country-map">
+                            <img src="https://via.placeholder.com/300x200.png?text=Jordan+Map" alt="Jordan Map">
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Egypt -->
+            <div id="branch-egypt" class="branch-details">
+                <button class="close-btn" onclick="closeBranch()">×</button>
+                <div class="details-content">
+                    <div class="branch-info">
+                        <h3>Egypt Branch</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste
+                            natus error sit.</p>
+                    </div>
+                    <div class="map-container">
+                        <div class="country-map">
+                            <img src="https://via.placeholder.com/300x200.png?text=Egypt+Map" alt="Egypt Map">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saudi -->
+            <div id="branch-saudi" class="branch-details">
+                <button class="close-btn" onclick="closeBranch()">×</button>
+                <div class="details-content">
+                    <div class="branch-info">
+                        <h3>Saudi Arabia Branch</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste
+                            natus error sit.</p>
+                    </div>
+                    <div class="map-container">
+                        <div class="country-map">
+                            <img src="https://via.placeholder.com/300x200.png?text=Saudi+Map" alt="Saudi Map">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -356,8 +404,10 @@
                     </div>
                 </div>
                 <p class="footer-description">
-                    We are a leading company that specializes in telecommunications infrastructure, wireless networks,
-                    fiber optics, and power systems, dedicated to delivering outstanding services and innovative
+                    We are a leading company that specializes in telecommunications infrastructure,
+                    wireless networks,
+                    fiber optics, and power systems, dedicated to delivering outstanding services and
+                    innovative
                     solutions.
                 </p>
             </div>

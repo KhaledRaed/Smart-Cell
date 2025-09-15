@@ -1,32 +1,49 @@
- // Scroll animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+let currentBranch = null;
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+function toggleBranch(branch) {
+    if (currentBranch && currentBranch !== branch) {
+        closeBranch();
+    }
 
-        // Observe all fade elements
-        document.addEventListener('DOMContentLoaded', () => {
-            // Start animations immediately for header elements
-            setTimeout(() => {
-                const badge = document.querySelector('.branches-badge');
-                const title = document.querySelector('.branches-title');
-                const subtitle = document.querySelector('.branches-subtitle');
-                
-                if (badge) badge.style.animationPlayState = 'running';
-                if (title) title.style.animationPlayState = 'running';
-                if (subtitle) subtitle.style.animationPlayState = 'running';
-            }, 300);
-
-            const fadeElements = document.querySelectorAll('.branch-panel.fade-element');
-            fadeElements.forEach((element) => {
-                observer.observe(element);
-            });
+    const branchElement = document.getElementById(`branch-${branch}`);
+    const cardElement = document.querySelector(`[onclick="toggleBranch('${branch}')"]`);
+    
+    if (currentBranch === branch) {
+        closeBranch();
+    } else {
+        currentBranch = branch;
+        document.querySelectorAll('.branch-card').forEach(card => {
+            card.classList.remove('active');
         });
+        cardElement.classList.add('active');
+        setTimeout(() => {
+            branchElement.classList.add('active');
+            branchElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    }
+}
+
+function closeBranch() {
+    if (currentBranch) {
+        const branchElement = document.getElementById(`branch-${currentBranch}`);
+        branchElement.classList.remove('active');
+        document.querySelectorAll('.branch-card').forEach(card => {
+            card.classList.remove('active');
+        });
+        currentBranch = null;
+    }
+}
+
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.branch-card') && 
+        !event.target.closest('.branch-details') &&
+        currentBranch) {
+        closeBranch();
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && currentBranch) {
+        closeBranch();
+    }
+});

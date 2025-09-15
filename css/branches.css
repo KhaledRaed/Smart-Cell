@@ -1,229 +1,217 @@
-* {
+.branches-section * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #ffffff;
-}
-
-/* Branches Section */
 .branches-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
-    background: linear-gradient(135deg, #f8fafc 0%, #e8edf3 100%);
-    padding: 100px 40px;
-    position: relative;
-    overflow: hidden;
+    padding: 20px;
+            background: linear-gradient(135deg, #EFEAE1 0%, #FFFFFF 100%);
 }
 
-.branches-container {
-    max-width: 1400px;
+.branches-section .branches-container {
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    z-index: 2;
+    padding: 40px 20px;
 }
 
-/* Section Badge */
-.branches-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #3176ba, #c03435);
-    color: #fff;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 18px rgba(49, 118, 186, 0.3);
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    width: fit-content;
-}
-
-.branches-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: #2e2d29;
-    margin-bottom: 25px;
-    line-height: 1.2;
-    letter-spacing: -1.5px;
+.branches-section .section-title {
     text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.branches-title span {
-    background: linear-gradient(135deg, #3176ba, #c03435);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.branches-subtitle {
+.branches-section .section-subtitle {
     text-align: center;
-    font-size: 1.2rem;
-    color: #3d5073;
+    color: #B8C5D6;
+    font-size: 1.1rem;
     margin-bottom: 60px;
-    line-height: 1.6;
+    font-weight: 300;
 }
 
-.branches-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+.branches-section .branches-grid {
+    display: flex;
     gap: 30px;
-    margin-top: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
-.branch-panel {
-    background: #fff;
-    padding: 35px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
+.branches-section .branch-card {
+    border-radius: 16px;
+    padding: 30px 40px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    min-width: 200px;
+    text-align: center;
+    color: white;
 }
 
-.branch-panel::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(135deg, #3176ba, #c03435);
+.branch-card.jordan {
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,122,61,0.7), rgba(206,17,38,0.7));
+}
+.branch-card.egypt {
+    background: linear-gradient(135deg, rgba(206,17,38,0.7), rgba(255,255,255,0.7), rgba(0,0,0,0.7));
+}
+.branch-card.saudi {
+    background: linear-gradient(135deg, rgba(0,108,53,0.7), rgba(26,71,42,0.7));
 }
 
-.branch-panel:hover {
+.branches-section .branch-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
-.branch-icon {
-    font-size: 2.5rem;
-    color: #3176ba;
-    margin-bottom: 20px;
+.branches-section .branch-card.active {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 2px solid #fff;
+}
+
+.branches-section .country-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.branches-section .country-flag {
+    font-size: 2rem;
+    margin-bottom: 15px;
     display: block;
 }
 
-.branch-name {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #2e2d29;
-    margin-bottom: 8px;
-    line-height: 1.3;
+.branches-section .branch-hint {
+    color: #eee;
+    font-size: 0.9rem;
+    font-weight: 300;
 }
 
-.branch-location {
-    font-size: 1rem;
-    color: #c03435;
-    font-weight: 600;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.branches-section .branch-details {
+    border-radius: 20px;
+    padding: 0;
+    margin-top: 40px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
 }
 
-.branch-desc {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #3d5073;
-    margin-bottom: 25px;
+.branches-section .branch-details.active {
+    max-height: 800px;
+    opacity: 1;
+    padding: 40px;
 }
 
-.branch-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid #e8edf3;
+.branches-section .details-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
 }
 
-.branch-cta a {
+.branches-section .branch-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #3176ba;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    gap: 15px;
 }
 
-.branch-cta a:hover {
-    background: #f1f5f9;
-    color: #c03435;
-    transform: translateX(5px);
+.branches-section .branch-info p {
+    color: #f1f1f1;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-.branch-cta a i {
+.branches-section .map-container {
+    text-align: center;
+    position: relative;
+}
+
+.branches-section .country-map {
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.branches-section .country-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.branches-section .map-label {
     font-size: 0.9rem;
-    width: 16px;
+    margin-top: 15px;
+    font-weight: 500;
+    color: #fff;
 }
 
-/* Special styling for head office */
-.branch-panel.head-office {
-    background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
-    border: 2px solid transparent;
-    background-clip: padding-box;
+#branch-jordan {
+    background: linear-gradient(135deg, #000000, #007A3D, #CE1126);
 }
 
-.branch-panel.head-office::before {
-    height: 6px;
+#branch-egypt {
+    background: linear-gradient(135deg, #CE1126, #ffffff, #000000);
 }
 
-/* Scroll Animation */
-.fade-element {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-}
-
-.fade-element.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .branches-title {
-        font-size: 3rem;
-    }
-    
-    .branches-grid {
-        grid-template-columns: 1fr;
-    }
+#branch-saudi {
+    background: linear-gradient(135deg, #006C35, #1A472A);
 }
 
 @media (max-width: 768px) {
-    .branches-section {
-        padding: 60px 20px;
+    .branches-section .branches-grid {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .branches-title {
-        font-size: 2.5rem;
-    }
-
-    .branches-grid {
+    .branches-section .details-content {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .branches-section .country-map {
+        width: 250px;
+        height: 150px;
+    }
+
+    .branches-section .section-title {
+        font-size: 2rem;
     }
 }
 
-@media (max-width: 576px) {
-    .branches-title {
-        font-size: 2rem;
-    }
+.branches-section .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
 
-    .branches-badge {
-        font-size: 0.8rem;
-        padding: 6px 16px;
-    }
-
-    .branch-cta {
-        flex-direction: column;
-        gap: 10px;
-    }
+.branches-section .close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
 }

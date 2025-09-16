@@ -1,217 +1,328 @@
 .branches-section * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.branches-section {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
-    padding: 20px;
-            background: linear-gradient(135deg, #EFEAE1 0%, #FFFFFF 100%);
-}
+        .branches-section {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #3176ba 0%, #3d5073 50%, #2E2D29 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
-.branches-section .branches-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
+        .branches-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(196,52,53,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
 
-.branches-section .section-title {
-    text-align: center;
-    color: white;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
+        .branches-section .branches-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
 
-.branches-section .section-subtitle {
-    text-align: center;
-    color: #B8C5D6;
-    font-size: 1.1rem;
-    margin-bottom: 60px;
-    font-weight: 300;
-}
+        .branches-section .section-title {
+            text-align: center;
+            color: #ffffff;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+        }
 
-.branches-section .branches-grid {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
+        .branches-section .section-subtitle {
+            text-align: center;
+            color: #efeae1;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
 
-.branches-section .branch-card {
-    border-radius: 16px;
-    padding: 30px 40px;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-    min-width: 200px;
-    text-align: center;
-    color: white;
-}
+        .branches-section .branches-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
 
-.branch-card.jordan {
-    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,122,61,0.7), rgba(206,17,38,0.7));
-}
-.branch-card.egypt {
-    background: linear-gradient(135deg, rgba(206,17,38,0.7), rgba(255,255,255,0.7), rgba(0,0,0,0.7));
-}
-.branch-card.saudi {
-    background: linear-gradient(135deg, rgba(0,108,53,0.7), rgba(26,71,42,0.7));
-}
+        .branches-section .branch-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 35px 30px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            min-width: 220px;
+            text-align: center;
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
 
-.branches-section .branch-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    border-color: rgba(255, 255, 255, 0.5);
-}
+        .branch-card.jordan {
+            border-left: 5px solid #2E2D29;
+        }
+        .branch-card.egypt {
+            border-left: 5px solid #c03435;
+        }
+        .branch-card.saudi {
+            border-left: 5px solid #3d5073;
+        }
 
-.branches-section .branch-card.active {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    border: 2px solid #fff;
-}
+        .branches-section .branch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(49,118,186,0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
 
-.branches-section .country-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
+        .branches-section .branch-card:hover::before {
+            opacity: 1;
+        }
 
-.branches-section .country-flag {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    display: block;
-}
+        .branches-section .branch-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            border-color: #3176ba;
+        }
 
-.branches-section .branch-hint {
-    color: #eee;
-    font-size: 0.9rem;
-    font-weight: 300;
-}
+        .branches-section .branch-card.active {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            border-color: #ea2528;
+            background: rgba(255, 255, 255, 1);
+        }
 
-.branches-section .branch-details {
-    border-radius: 20px;
-    padding: 0;
-    margin-top: 40px;
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    color: white;
-}
+        .branches-section .branch-card.active::before {
+            opacity: 1;
+            background: linear-gradient(135deg, rgba(234,37,40,0.05) 0%, rgba(49,118,186,0.05) 100%);
+        }
 
-.branches-section .branch-details.active {
-    max-height: 800px;
-    opacity: 1;
-    padding: 40px;
-}
+        .branches-section .country-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #2E2D29;
+            letter-spacing: -0.01em;
+        }
 
-.branches-section .details-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
+        .branches-section .country-flag {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
 
-.branches-section .branch-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+        .branches-section .branch-hint {
+            color: #3d5073;
+            font-size: 0.95rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
 
-.branches-section .branch-info p {
-    color: #f1f1f1;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
+        .branches-section .branch-details {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 0;
+            margin-top: 40px;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
 
-.branches-section .map-container {
-    text-align: center;
-    position: relative;
-}
+        .branches-section .branch-details.active {
+            max-height: 600px;
+            opacity: 1;
+            padding: 45px;
+        }
 
-.branches-section .country-map {
-    width: 300px;
-    height: 200px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    transition: all 0.4s ease;
-    overflow: hidden;
-    position: relative;
-}
+        .branches-section .details-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
 
-.branches-section .country-map img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .branches-section .branch-info h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #2E2D29;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            letter-spacing: -0.02em;
+        }
 
-.branches-section .map-label {
-    font-size: 0.9rem;
-    margin-top: 15px;
-    font-weight: 500;
-    color: #fff;
-}
+        .branches-section .branch-info p {
+            color: #3d5073;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
 
-#branch-jordan {
-    background: linear-gradient(135deg, #000000, #007A3D, #CE1126);
-}
+        .branches-section .map-container {
+            text-align: center;
+            position: relative;
+        }
 
-#branch-egypt {
-    background: linear-gradient(135deg, #CE1126, #ffffff, #000000);
-}
+        .branches-section .country-map {
+            width: 320px;
+            height: 220px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #efeae1 0%, #ffffff 100%);
+            border: 3px solid #3176ba;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
 
-#branch-saudi {
-    background: linear-gradient(135deg, #006C35, #1A472A);
-}
+        .branches-section .country-map:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
 
-@media (max-width: 768px) {
-    .branches-section .branches-grid {
-        flex-direction: column;
-        align-items: center;
-    }
+        .branches-section .country-map img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
 
-    .branches-section .details-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+        .branches-section .map-label {
+            font-size: 1rem;
+            margin-top: 15px;
+            font-weight: 600;
+            color: #2E2D29;
+        }
 
-    .branches-section .country-map {
-        width: 250px;
-        height: 150px;
-    }
+        #branch-jordan .branch-info h3::before {
+            content: '🇯🇴';
+            font-size: 1.5rem;
+        }
 
-    .branches-section .section-title {
-        font-size: 2rem;
-    }
-}
+        #branch-egypt .branch-info h3::before {
+            content: '🇪🇬';
+            font-size: 1.5rem;
+        }
 
-.branches-section .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-}
+        #branch-saudi .branch-info h3::before {
+            content: '🇸🇦';
+            font-size: 1.5rem;
+        }
 
-.branches-section .close-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(90deg);
-}
+        .branches-section .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: rgba(234, 37, 40, 0.1);
+            border: 2px solid rgba(234, 37, 40, 0.3);
+            color: #ea2528;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .branches-section .close-btn:hover {
+            background: #ea2528;
+            color: white;
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 4px 15px rgba(234, 37, 40, 0.3);
+        }
+
+        /* Branch-specific styling */
+        .branch-details#branch-jordan {
+            border-left: 4px solid #2E2D29;
+        }
+
+        .branch-details#branch-egypt {
+            border-left: 4px solid #c03435;
+        }
+
+        .branch-details#branch-saudi {
+            border-left: 4px solid #3d5073;
+        }
+
+        @media (max-width: 768px) {
+            .branches-section {
+                padding: 40px 15px;
+            }
+
+            .branches-section .branches-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .branches-section .branch-card {
+                min-width: 280px;
+                max-width: 320px;
+            }
+
+            .branches-section .details-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .branches-section .country-map {
+                width: 280px;
+                height: 180px;
+            }
+
+            .branches-section .section-title {
+                font-size: 2.5rem;
+            }
+
+            .branches-section .branch-info h3 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .branches-section .branch-card {
+                min-width: 250px;
+            }
+
+            .branches-section .country-map {
+                width: 240px;
+                height: 160px;
+            }
+        }

@@ -33,3 +33,26 @@ function handleServiceCardClick(event){
     
 }
 
+
+
+// ??? this following code is for the client card hover interaction , css implementation can get buggy with children elements
+
+let clientCards = document.querySelectorAll(".client-card");
+clientCards.forEach(card=>{
+    card.addEventListener('mouseenter',handleClientCardHoverIn);
+    card.addEventListener('mouseleave',handleClientCardHoverOut);
+});
+
+function handleClientCardHoverOut(event){
+    let currentCard = event.currentTarget;
+    let currentCardBackground = currentCard.querySelector('.client-card-background');
+
+    currentCardBackground.classList.remove('client-card-background-hover');
+}
+function handleClientCardHoverIn(event){
+    
+    let currentCard = event.currentTarget;
+    let currentCardBackground = currentCard.querySelector('.client-card-background');
+
+    currentCardBackground.classList.add('client-card-background-hover');
+}

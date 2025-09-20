@@ -147,3 +147,86 @@
 .featured-card-wrapper .close-button:active{
     transform: translateY(5px);
 }
+
+
+/* clients section */
+/* /////////////////////////////////////////////////////////////////////////////////////// */
+
+#clients{
+    width: 100%;
+}
+.clients-container{
+    width: 100%;
+
+}
+/* .clients */
+
+.clients-title{
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #2e2d29;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+.clients-title span {
+    background: linear-gradient(135deg, #3176ba, #c03435);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.clients-cards-container{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: 10px;
+
+    gap: 10px;
+}
+
+.client-card{
+    position: relative;
+
+    height: 15%;
+    height: 200px;
+
+    aspect-ratio: 1/1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    background-color: rgba(1, 1, 1, 0.1);
+}
+
+.client-card .client-logo{
+    height: 60px;
+}
+.client-logo,.client-name{
+    z-index: 2;
+}
+
+.client-card-background{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: 0.2s;
+
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(135deg, #3176ba, #c03435);
+    opacity: 0%;
+}
+.client-card-background-hover{
+    opacity: 1;
+    transform: scale(1.05);
+}

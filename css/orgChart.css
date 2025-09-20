@@ -1,0 +1,786 @@
+:root {
+            --primary-color: #001F3F;
+            --secondary-color: #C03435;
+            --accent-color: #2E2D29;
+            --dark-color: #2E2D29;
+            --light-color: #FEFEFE;
+            --bg-gradient-start: #3D5073;
+            --bg-gradient-end: #2E2D29;
+            --connector-color: #3176BA;
+            --hover-transform: translateY(-10px);
+            --transition-speed: 0.3s;
+            --animation-duration: 0.6s;
+            --easing-function: ease-out;
+        }
+        
+        #orgchart * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #orgchart body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        #orgchart .container {
+            max-width: 1800px;
+            width: 100%;
+            margin: 0 auto;
+            background: var(--light-color);
+            padding: 60px 40px;
+            border-radius: 24px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-speed) var(--easing-function);
+        }
+        
+        /* Decorative background elements */
+        #orgchart .container::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(61, 80, 115, 0.1) 0%, transparent 70%);
+            z-index: 0;
+            transition: transform var(--transition-speed) var(--easing-function);
+        }
+        
+        #orgchart .container:hover::before {
+            transform: scale(1.1);
+        }
+        
+        #orgchart .container::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(46, 45, 41, 0.08) 0%, transparent 70%);
+            z-index: 0;
+            transition: transform var(--transition-speed) var(--easing-function);
+        }
+        
+        #orgchart .container:hover::after {
+            transform: scale(1.1);
+        }
+        
+        #orgchart .header {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+            z-index: 2;
+            transition: all var(--transition-speed) var(--easing-function);
+        }
+        
+        #orgchart .header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            border-radius: 3px;
+            box-shadow: 0 2px 10px rgba(49, 118, 186, 0.3);
+            transition: all var(--transition-speed) var(--easing-function);
+        }
+        
+        #orgchart .header:hover::after {
+            width: 150px;
+        }
+        
+        #orgchart .header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--dark-color);
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: inline-block;
+            transition: all var(--transition-speed) var(--easing-function);
+        }
+        
+        #orgchart .header h1:hover {
+            transform: scale(1.03);
+        }
+        
+        #orgchart .header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+            transition: all var(--transition-speed) var(--easing-function);
+        }
+        
+        #orgchart .header h1:hover::after {
+            width: 60%;
+            left: 20%;
+        }
+        
+        #orgchart .org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 70px;
+            position: relative;
+            z-index: 2;
+            padding: 20px 0;
+            transition: all var(--transition-speed) var(--easing-function);
+        }
+        
+        #orgchart .level {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+            padding: 10px 0;
+            transition: all var(--transition-speed) var(--easing-function);
+        }
+        
+        /* Children container - side by side layout */
+        #orgchart .children-container {
+            display: none;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1600px;
+            gap: 150px;
+            margin: 40px 0;
+            position: relative;
+            z-index: 2;
+            transition: all var(--transition-speed) var(--easing-function);
+        }
+        
+        #orgchart .children-group {
+            flex: 1;
+            max-width: 500px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            transition: all var(--transition-speed) var(--easing-function);
+        }
+        
+        /* QEHS on the left side */
+        #orgchart .children-group.qehs-side {
+            align-self: flex-start;
+        }
+        
+        /* PMO on the right side */
+        #orgchart .children-group.pmo-side {
+            align-self: flex-start;
+        }
+        
+        /* Grid layouts for children */
+        #orgchart .children-grid {
+            display: grid;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
+            max-width: 450px;
+            padding: 25px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-speed) var(--easing-function);
+        }
+        
+        /* QEHS grid - 3 items in column */
+        #orgchart .children-grid.qehs-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+        }
+        
+        /* PMO grid - 3 items in column */
+        #orgchart .children-grid.pmo-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+        }
+        
+        #orgchart .node {
+            background: linear-gradient(135deg, var(--light-color), #F8F8F8);
+            border: 3px solid #EFEAE1;
+            border-radius: 18px;
+            padding: 25px 20px;
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all var(--transition-speed) var(--easing-function);
+            position: relative;
+            box-shadow: 0 6px 20px rgba(46, 45, 41, 0.08);
+            z-index: 3;
+            overflow: hidden;
+            will-change: transform, box-shadow;
+        }
+        
+        #orgchart .node::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s var(--easing-function);
+            border-radius: 0 0 5px 5px;
+        }
+        
+        #orgchart .node:hover {
+            transform: var(--hover-transform) scale(1.02);
+            box-shadow: 0 20px 45px rgba(46, 45, 41, 0.18);
+            border-color: rgba(61, 80, 115, 0.5);
+        }
+        
+        #orgchart .node:hover::before {
+            transform: scaleX(1);
+        }
+        
+        #orgchart .employee-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s var(--easing-function);
+            will-change: transform;
+        }
+        
+        #orgchart .node:hover .employee-icon {
+            transform: scale(1.1) rotate(8deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        #orgchart .employee-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+            border-radius: 50%;
+            transition: all 0.4s var(--easing-function);
+        }
+        
+        #orgchart .node:hover .employee-icon::before {
+            transform: rotate(45deg);
+        }
+        
+        #orgchart .node-info {
+            text-align: center;
+            width: 100%;
+            transition: all var(--transition-speed) var(--easing-function);
+        }
+        
+        #orgchart .employee-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+            transition: all 0.4s var(--easing-function);
+            will-change: color, transform;
+        }
+        
+        #orgchart .node:hover .employee-name {
+            color: var(--primary-color);
+            transform: scale(1.03);
+        }
+        
+        #orgchart .employee-position {
+            font-size: 15px;
+            color: var(--primary-color);
+            font-weight: 500;
+            line-height: 1.5;
+            opacity: 0.9;
+            transition: all 0.4s var(--easing-function);
+        }
+        
+        #orgchart .node:hover .employee-position {
+            opacity: 1;
+        }
+        
+        /* Tooltip styling */
+        #orgchart .node[data-tooltip]::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%) scaleY(0);
+            transform-origin: top;
+            background: var(--dark-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: all 0.4s var(--easing-function);
+            pointer-events: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: max-content;
+            max-width: 250px;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        #orgchart .node[data-tooltip]:hover::after {
+            transform: translateX(-50%) scaleY(1);
+            opacity: 1;
+            bottom: -55px;
+        }
+        
+        /* Collapse/expand toggle */
+        #orgchart .toggle {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            user-select: none;
+            color: var(--primary-color);
+            transition: all 0.2s ease;
+            padding: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            will-change: transform, background-color, color;
+        }
+        
+        #orgchart .toggle:hover {
+            background: rgba(49, 118, 186, 0.2);
+            color: var(--dark-color);
+            transform: rotate(180deg) scale(1.1);
+        }
+        
+        /* Role-based colors */
+        #orgchart .general-manager {
+            border-color: var(--primary-color);
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            box-shadow: 0 6px 20px rgba(0, 31, 63, 0.1);
+        }
+        
+        #orgchart .general-manager .employee-icon {
+            background: linear-gradient(135deg, var(--primary-color), #001226);
+        }
+        
+        /* All children of Executive Manager - Red */
+        #orgchart .executive-manager,
+        #orgchart .department-head {
+            border-color: var(--secondary-color);
+            background: linear-gradient(135deg, #fff5f5, #ffecec);
+            box-shadow: 0 6px 20px rgba(192, 52, 53, 0.1);
+        }
+        
+        #orgchart .executive-manager .employee-icon,
+        #orgchart .department-head .employee-icon {
+            background: linear-gradient(135deg, var(--secondary-color), #9e2a2b);
+        }
+        
+        /* All children of QEHS and PMO - Black/Dark Gray */
+        #orgchart .sub-department,
+        #orgchart .project-manager,
+        #orgchart .fleet-officer,
+        #orgchart .warehouse-officer {
+            border-color: var(--accent-color);
+            background: linear-gradient(135deg, #f5f5f5, #eaeaea);
+            box-shadow: 0 6px 20px rgba(46, 45, 41, 0.1);
+        }
+        
+        #orgchart .sub-department .employee-icon,
+        #orgchart .project-manager .employee-icon,
+        #orgchart .fleet-officer .employee-icon,
+        #orgchart .warehouse-officer .employee-icon {
+            background: linear-gradient(135deg, var(--accent-color), #1a1a1a);
+        }
+        
+        /* SVG connectors */
+        #orgchart .connectors-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: visible;
+        }
+        
+        #orgchart .connector {
+            fill: none;
+            stroke: var(--connector-color);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.9;
+            transition: all 0.2s ease;
+        }
+        
+        #orgchart .connector-parent {
+            stroke-width: 3;
+            stroke: var(--primary-color);
+        }
+        
+        #orgchart .connector-qehs {
+            stroke: var(--accent-color);
+        }
+        
+        #orgchart .connector-pmo {
+            stroke: var(--accent-color);
+        }
+        
+        #orgchart .connector:hover {
+            stroke-width: 3.5;
+            opacity: 1;
+        }
+        
+        /* Loading animation */
+        #orgchart .node {
+            animation: fadeInUp var(--animation-duration) var(--easing-function) forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* Staggered animations */
+        #orgchart .level:nth-child(2) .node {
+            animation-delay: 0.1s;
+        }
+        
+        #orgchart .level:nth-child(3) .node {
+            animation-delay: 0.2s;
+        }
+        
+        #orgchart .level:nth-child(4) .node {
+            animation-delay: 0.3s;
+        }
+        
+        #orgchart .level:nth-child(5) .node {
+            animation-delay: 0.4s;
+        }
+        
+        #orgchart .children-container .node {
+            animation-delay: 0.5s;
+        }
+        
+        /* Enhanced hover effects for smoother experience */
+        #orgchart .node {
+            will-change: transform, box-shadow;
+        }
+        
+        /* Responsive Design */
+        @media(max-width: 1600px) {
+            #orgchart .children-container {
+                gap: 100px;
+            }
+        }
+        
+        @media(max-width: 1400px) {
+            #orgchart .children-container {
+                gap: 80px;
+            }
+            #orgchart .children-grid {
+                max-width: 400px;
+                gap: 25px;
+            }
+            #orgchart .node {
+                width: 260px;
+            }
+        }
+        
+        @media(max-width: 1200px) {
+            #orgchart .container {
+                padding: 40px 30px;
+            }
+            #orgchart .children-container {
+                flex-direction: column;
+                gap: 50px;
+                align-items: center;
+            }
+            #orgchart .children-group {
+                max-width: 100%;
+                width: 100%;
+            }
+            #orgchart .children-grid {
+                max-width: 600px;
+            }
+            /* Switch to 2-column grid on medium screens */
+            #orgchart .children-grid.qehs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+            #orgchart .children-grid.pmo-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+            #orgchart .node {
+                width: 280px;
+                padding: 22px 18px;
+            }
+        }
+        
+        @media(max-width: 992px) {
+            #orgchart .org-chart {
+                gap: 60px;
+            }
+            #orgchart .children-grid {
+                gap: 25px;
+                max-width: 500px;
+            }
+            #orgchart .node {
+                width: 250px;
+                padding: 20px 16px;
+            }
+            #orgchart .employee-icon {
+                width: 75px;
+                height: 75px;
+                font-size: 28px;
+            }
+            #orgchart .employee-name {
+                font-size: 18px;
+            }
+        }
+        
+        @media(max-width: 768px) {
+            #orgchart .container {
+                padding: 30px 20px;
+                margin: 10px;
+                border-radius: 18px;
+            }
+            #orgchart .header h1 {
+                font-size: 36px;
+                letter-spacing: 2px;
+            }
+            #orgchart .org-chart {
+                gap: 50px;
+            }
+            /* Single column on mobile */
+            #orgchart .children-grid.qehs-grid,
+            #orgchart .children-grid.pmo-grid {
+                grid-template-columns: 1fr;
+            }
+            #orgchart .children-grid {
+                gap: 20px;
+                max-width: 100%;
+            }
+            #orgchart .node {
+                width: 100%;
+                max-width: 300px;
+                padding: 18px 15px;
+            }
+            #orgchart .employee-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 26px;
+                margin-bottom: 15px;
+            }
+            #orgchart .employee-name {
+                font-size: 17px;
+                margin-bottom: 8px;
+            }
+            #orgchart .toggle {
+                top: 12px;
+                right: 15px;
+                font-size: 18px;
+                width: 28px;
+                height: 28px;
+            }
+        }
+        
+        @media(max-width: 576px) {
+            #orgchart body {
+                padding: 10px;
+            }
+            #orgchart .container {
+                padding: 25px 15px;
+                margin: 5px;
+                border-radius: 16px;
+            }
+            #orgchart .header {
+                margin-bottom: 40px;
+            }
+            #orgchart .header h1 {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+            #orgchart .org-chart {
+                gap: 40px;
+            }
+            #orgchart .node {
+                max-width: 280px;
+                padding: 16px 12px;
+            }
+            #orgchart .employee-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+            #orgchart .employee-name {
+                font-size: 16px;
+                margin-bottom: 6px;
+            }
+            #orgchart .toggle {
+                top: 10px;
+                right: 12px;
+                font-size: 16px;
+                width: 26px;
+                height: 26px;
+            }
+        }
+        
+        @media(max-width: 420px) {
+            #orgchart .container {
+                padding: 20px 10px;
+                border-radius: 12px;
+            }
+            #orgchart .org-chart {
+                gap: 35px;
+            }
+            #orgchart .node {
+                max-width: 250px;
+                padding: 14px 10px;
+            }
+            #orgchart .employee-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+            #orgchart .employee-name {
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+            #orgchart .header h1 {
+                font-size: 24px;
+            }
+        }
+        
+        @media(max-width: 360px) {
+            #orgchart .container {
+                padding: 15px 8px;
+            }
+            #orgchart .node {
+                max-width: 220px;
+                padding: 12px 8px;
+            }
+            #orgchart .employee-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 20px;
+            }
+            #orgchart .employee-name {
+                font-size: 14px;
+            }
+            #orgchart .header h1 {
+                font-size: 22px;
+            }
+        }
+        
+        /* === Custom Group Colors === */
+        /* General Manager */
+        #orgchart .general-manager {
+            border-color: #3498db !important;
+            background: linear-gradient(135deg, #ecf6fc, #d6ecfa) !important;
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.2) !important;
+        }
+        
+        #orgchart .general-manager .employee-icon {
+            background: linear-gradient(135deg, #3498db, #1f6ea5) !important;
+        }
+        
+        /* Executive Manager */
+        #orgchart .executive-manager {
+            border-color: #2ecc71 !important;
+            background: linear-gradient(135deg, #eafaf1, #d1f2e8) !important;
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.2) !important;
+        }
+        
+        #orgchart .executive-manager .employee-icon {
+            background: linear-gradient(135deg, #2ecc71, #27ae60) !important;
+        }
+        
+        /* Department Heads */
+        #orgchart .department-head {
+            border-color: #e67e22 !important;
+            background: linear-gradient(135deg, #fdf1e6, #fbe3d1) !important;
+            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.2) !important;
+        }
+        
+        #orgchart .department-head .employee-icon {
+            background: linear-gradient(135deg, #e67e22, #ca6f1e) !important;
+        }
+        
+        /* QEHS group */
+        #orgchart .sub-department {
+            border-color: #9b59b6 !important;
+            background: linear-gradient(135deg, #f5eafc, #ebdff9) !important;
+            box-shadow: 0 6px 20px rgba(155, 89, 182, 0.2) !important;
+        }
+        
+        #orgchart .sub-department .employee-icon {
+            background: linear-gradient(135deg, #9b59b6, #6c3483) !important;
+        }
+        
+        /* PMO group */
+        #orgchart .project-manager,
+        #orgchart .fleet-officer,
+        #orgchart .warehouse-officer {
+            border-color: #e84393 !important;
+            background: linear-gradient(135deg, #fdeaf3, #fcd9eb) !important;
+            box-shadow: 0 6px 20px rgba(232, 67, 147, 0.2) !important;
+        }
+        
+        #orgchart .project-manager .employee-icon,
+        #orgchart .fleet-officer .employee-icon,
+        #orgchart .warehouse-officer .employee-icon {
+            background: linear-gradient(135deg, #e84393, #c2185b) !important;
+        }

@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/about.css">
     <link rel="stylesheet" href="/css/branches.css">
-    <link rel="stylesheet" href="/css//policy-Certifi.css">
+    <link rel="stylesheet" href="/css/policy-Certifi.css">
+    <link rel="stylesheet" href="/css/orgChart.css">
     <link rel="stylesheet" href="/css/footer.css">
     <style>
         * {
@@ -397,8 +398,6 @@
         <div class="container">
         <!-- Hero Section -->
         <h1 class="section-title">Excellence in Every Standard</h1>
-        <p class="section-subtitle">Our unwavering commitment to safety, quality, and continuous improvement drives
-            everything we do at SMART Cell</p>
 
         <!-- Policies Section -->
         <div class="policies-grid">
@@ -475,6 +474,160 @@
             cornerstone of our success.
         </div>
     </div>
+    </section>
+
+    <!-- Organization Chart Section -->
+    <section id="orgchart">
+        <div class="container">
+            <div class="header">
+                <h1>ORGANIZATION CHART</h1>
+            </div>
+            <div class="org-chart" id="orgChart">
+                <svg class="connectors-svg" id="connectors"></svg>
+                <div class="level">
+                    <div class="node general-manager" id="gm"
+                        data-tooltip="Executive leadership and strategic direction">
+                        <div class="employee-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="node-info">
+                            <div class="employee-name">General Manager</div>
+                        </div>
+                        <span class="toggle" data-state="collapsed">▶</span>
+                    </div>
+                </div>
+                <div class="level" data-parent="gm" style="display: none;">
+                    <div class="node executive-manager" id="exec" data-parent="gm"
+                        data-tooltip="Strategic execution and operations oversight">
+                        <div class="employee-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="node-info">
+                            <div class="employee-name">Executive Manager</div>
+                        </div>
+                        <span class="toggle" data-state="collapsed">▶</span>
+                    </div>
+                </div>
+                <div class="level" data-parent="exec" style="display: none;">
+                    <div class="node department-head" id="legal" data-parent="exec"
+                        data-tooltip="Legal compliance and advisory services">
+                        <div class="employee-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="node-info">
+                            <div class="employee-name">Legal Consultant</div>
+                        </div>
+                    </div>
+                    <div class="node department-head" id="finance" data-parent="exec"
+                        data-tooltip="Financial planning and management">
+                        <div class="employee-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="node-info">
+                            <div class="employee-name">Finance Manager</div>
+                        </div>
+                    </div>
+                    <div class="node department-head" id="hr" data-parent="exec"
+                        data-tooltip="Human resources and talent management">
+                        <div class="employee-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="node-info">
+                            <div class="employee-name">HR Manager</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="level" data-parent="exec"
+                    style="width: 100%; justify-content: center; gap: 200px; display: none;">
+                    <div class="node sub-department" id="qehs" data-parent="exec"
+                        data-tooltip="Quality, Environment, Health & Safety">
+                        <div class="employee-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="node-info">
+                            <div class="employee-name">QEHS Manager</div>
+                        </div>
+                        <span class="toggle" data-state="collapsed">▶</span>
+                    </div>
+                    <div class="node sub-department" id="pmo" data-parent="exec"
+                        data-tooltip="Regional project management operations">
+                        <div class="employee-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="node-info">
+                            <div class="employee-name">Regional PMO Manager</div>
+                        </div>
+                        <span class="toggle" data-state="collapsed">▶</span>
+                    </div>
+                </div>
+                <div class="children-container" id="children-container">
+                    <!-- LEFT SIDE: QEHS Children -->
+                    <div class="children-group qehs-side">
+                        <div class="children-grid qehs-grid" data-parent="qehs" id="qehs-children">
+                            <div class="node sub-department" id="quality" data-parent="qehs"
+                                data-tooltip="Quality assurance and control">
+                                <div class="employee-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="node-info">
+                                    <div class="employee-name">Quality Officer</div>
+                                </div>
+                            </div>
+                            <div class="node sub-department" id="safety" data-parent="qehs"
+                                data-tooltip="Health and safety management">
+                                <div class="employee-icon">
+                                    <i class="fas fa-hard-hat"></i>
+                                </div>
+                                <div class="node-info">
+                                    <div class="employee-name">Health & Safety Officer</div>
+                                </div>
+                            </div>
+                            <div class="node sub-department" id="inspector" data-parent="qehs"
+                                data-tooltip="Health and safety inspections">
+                                <div class="employee-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div class="node-info">
+                                    <div class="employee-name">Health & Safety Inspector</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- RIGHT SIDE: PMO Children -->
+                    <div class="children-group pmo-side">
+                        <div class="children-grid pmo-grid" data-parent="pmo" id="pmo-children">
+                            <div class="node project-manager" id="proj" data-parent="pmo"
+                                data-tooltip="Project planning and execution">
+                                <div class="employee-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div class="node-info">
+                                    <div class="employee-name">Project Manager</div>
+                                </div>
+                            </div>
+                            <div class="node fleet-officer" id="fleet" data-parent="pmo"
+                                data-tooltip="Fleet management and logistics">
+                                <div class="employee-icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="node-info">
+                                    <div class="employee-name">Fleet Officer</div>
+                                </div>
+                            </div>
+                            <div class="node warehouse-officer" id="warehouse" data-parent="pmo"
+                                data-tooltip="Warehouse operations and inventory">
+                                <div class="employee-icon">
+                                    <i class="fas fa-warehouse"></i>
+                                </div>
+                                <div class="node-info">
+                                    <div class="employee-name">Warehouse Officer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer Section -->
@@ -554,6 +707,7 @@
     <script src="/js/header.js"></script>
     <script src="/js/about.js"></script>
     <script src="/js/policy-Certifi.js"></script>
+    <script src="/js/orgChart.js"></script>
     <script src="/js/branches.js"></script>
 </body>
 

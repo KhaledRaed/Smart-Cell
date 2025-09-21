@@ -124,4 +124,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize video quality handling if needed
 // Uncomment the line below if you want to handle video quality based on connection
-// handleVideoQuality();
+handleVideoQuality();

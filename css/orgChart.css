@@ -1,12 +1,12 @@
 :root {
-            --primary-color: #2563eb;
-            --secondary-color: #dc2626;
-            --accent-color: #059669;
-            --dark-color: #1f2937;
+            --primary-color: #3176ba;
+            --secondary-color: #c03435;
+            --accent-color: #ea2528;
+            --dark-color: #2E2D29;
             --light-color: #ffffff;
-            --bg-gradient-start: #667eea;
-            --bg-gradient-end: #764ba2;
-            --connector-color: #6b7280;
+            --bg-gradient-start: #efeae1;
+            --bg-gradient-end: #3d5073;
+            --connector-color: #3d5073;
             --hover-transform: translateY(-8px);
             --transition-speed: 0.3s;
             --animation-duration: 0.6s;
@@ -22,7 +22,7 @@
         #orgchart body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
-            color: #333;
+            color: #2E2D29;
             padding: 20px;
             min-height: 100vh;
             display: flex;
@@ -34,11 +34,11 @@
             max-width: 1800px;
             width: 100%;
             margin: 0 auto;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(239, 234, 225, 0.95));
             backdrop-filter: blur(20px);
             padding: 60px 40px;
             border-radius: 24px;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 80px rgba(46, 45, 41, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2);
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -54,7 +54,7 @@
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(61, 80, 115, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(49, 118, 186, 0.1) 0%, transparent 70%);
             z-index: 0;
             transition: transform var(--transition-speed) var(--easing-function);
         }
@@ -112,7 +112,7 @@
             color: var(--dark-color);
             letter-spacing: 3px;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 4px rgba(46, 45, 41, 0.1);
             position: relative;
             display: inline-block;
             transition: all var(--transition-speed) var(--easing-function);
@@ -213,8 +213,8 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(15px);
             border: 3px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1), 
-                        0 5px 15px rgba(0, 0, 0, 0.05),
+            box-shadow: 0 15px 40px rgba(46, 45, 41, 0.1), 
+                        0 5px 15px rgba(46, 45, 41, 0.05),
                         inset 0 1px 0 rgba(255, 255, 255, 0.6);
             transition: all var(--transition-speed) var(--easing-function);
             position: relative;
@@ -233,16 +233,16 @@
         }
 
         #orgchart .children-grid.qehs-grid {
-            border-color: rgba(155, 89, 182, 0.3);
-            box-shadow: 0 15px 40px rgba(155, 89, 182, 0.15), 
-                        0 5px 15px rgba(155, 89, 182, 0.1),
+            border-color: rgba(61, 80, 115, 0.3);
+            box-shadow: 0 15px 40px rgba(61, 80, 115, 0.15), 
+                        0 5px 15px rgba(61, 80, 115, 0.1),
                         inset 0 1px 0 rgba(255, 255, 255, 0.6);
         }
 
         #orgchart .children-grid.pmo-grid {
-            border-color: rgba(232, 67, 147, 0.3);
-            box-shadow: 0 15px 40px rgba(232, 67, 147, 0.15), 
-                        0 5px 15px rgba(232, 67, 147, 0.1),
+            border-color: rgba(234, 37, 40, 0.3);
+            box-shadow: 0 15px 40px rgba(234, 37, 40, 0.15), 
+                        0 5px 15px rgba(234, 37, 40, 0.1),
                         inset 0 1px 0 rgba(255, 255, 255, 0.6);
         }
 
@@ -259,8 +259,8 @@
         }
 
         #orgchart .node {
-            background: linear-gradient(135deg, var(--light-color), #F8F8F8);
-            border: 3px solid #EFEAE1;
+            background: linear-gradient(135deg, var(--light-color), #efeae1);
+            border: 3px solid #efeae1;
             border-radius: 18px;
             padding: 17px 13px;
             width: 230px;
@@ -312,14 +312,14 @@
             margin-bottom: 20px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(46, 45, 41, 0.1);
             transition: all 0.4s var(--easing-function);
             will-change: transform;
         }
 
         #orgchart .node:hover .employee-icon {
             transform: scale(1.1) rotate(8deg);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(46, 45, 41, 0.2);
         }
 
         #orgchart .employee-icon::before {
@@ -388,7 +388,7 @@
             opacity: 0;
             transition: all 0.4s var(--easing-function);
             pointer-events: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(46, 45, 41, 0.2);
             width: max-content;
             max-width: 250px;
             text-align: center;
@@ -432,25 +432,25 @@
         /* Role-based colors */
         #orgchart .general-manager {
             border-color: var(--primary-color);
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            box-shadow: 0 6px 20px rgba(0, 31, 63, 0.1);
+            background: linear-gradient(135deg, #efeae1, #ffffff);
+            box-shadow: 0 6px 20px rgba(49, 118, 186, 0.1);
         }
 
         #orgchart .general-manager .employee-icon {
-            background: linear-gradient(135deg, var(--primary-color), #001226);
+            background: linear-gradient(135deg, var(--primary-color), #2E2D29);
         }
 
         /* All children of Executive Manager - Red */
         #orgchart .executive-manager,
         #orgchart .department-head {
             border-color: var(--secondary-color);
-            background: linear-gradient(135deg, #fff5f5, #ffecec);
+            background: linear-gradient(135deg, #ffffff, #efeae1);
             box-shadow: 0 6px 20px rgba(192, 52, 53, 0.1);
         }
 
         #orgchart .executive-manager .employee-icon,
         #orgchart .department-head .employee-icon {
-            background: linear-gradient(135deg, var(--secondary-color), #9e2a2b);
+            background: linear-gradient(135deg, var(--secondary-color), #2E2D29);
         }
 
         /* All children of QEHS and PMO - Black/Dark Gray */
@@ -459,7 +459,7 @@
         #orgchart .fleet-officer,
         #orgchart .warehouse-officer {
             border-color: var(--accent-color);
-            background: linear-gradient(135deg, #f5f5f5, #eaeaea);
+            background: linear-gradient(135deg, #efeae1, #ffffff);
             box-shadow: 0 6px 20px rgba(46, 45, 41, 0.1);
         }
 
@@ -467,7 +467,7 @@
         #orgchart .project-manager .employee-icon,
         #orgchart .fleet-officer .employee-icon,
         #orgchart .warehouse-officer .employee-icon {
-            background: linear-gradient(135deg, var(--accent-color), #1a1a1a);
+            background: linear-gradient(135deg, var(--accent-color), #2E2D29);
         }
 
         /* SVG connectors */
@@ -490,7 +490,7 @@
             stroke-linejoin: round;
             opacity: 0.8;
             transition: all 0.3s ease;
-            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 1px 2px rgba(46, 45, 41, 0.1));
         }
 
         #orgchart .connector-parent {
@@ -500,13 +500,13 @@
         }
 
         #orgchart .connector-qehs {
-            stroke: #8b5cf6;
+            stroke: #3d5073;
             stroke-width: 3;
             opacity: 0.9;
         }
 
         #orgchart .connector-pmo {
-            stroke: #ec4899;
+            stroke: #ea2528;
             stroke-width: 3;
             opacity: 0.9;
         }
@@ -514,7 +514,7 @@
         #orgchart .connector:hover {
             stroke-width: 3;
             opacity: 1;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(0 2px 4px rgba(46, 45, 41, 0.15));
         }
 
         /* Loading animation */
@@ -819,59 +819,59 @@
         /* === Custom Group Colors === */
         /* General Manager */
         #orgchart .general-manager {
-            border-color: #3b82f6 !important;
-            background: linear-gradient(135deg, #dbeafe, #bfdbfe) !important;
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25) !important;
+            border-color: #3176ba !important;
+            background: linear-gradient(135deg, #efeae1, #ffffff) !important;
+            box-shadow: 0 8px 25px rgba(49, 118, 186, 0.25) !important;
         }
 
         #orgchart .general-manager .employee-icon {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+            background: linear-gradient(135deg, #3176ba, #2E2D29) !important;
         }
 
         /* Executive Manager */
         #orgchart .executive-manager {
-            border-color: #10b981 !important;
-            background: linear-gradient(135deg, #d1fae5, #a7f3d0) !important;
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25) !important;
+            border-color: #c03435 !important;
+            background: linear-gradient(135deg, #ffffff, #efeae1) !important;
+            box-shadow: 0 8px 25px rgba(192, 52, 53, 0.25) !important;
         }
 
         #orgchart .executive-manager .employee-icon {
-            background: linear-gradient(135deg, #10b981, #059669) !important;
+            background: linear-gradient(135deg, #c03435, #2E2D29) !important;
         }
 
         /* Department Heads */
         #orgchart .department-head {
-            border-color: #f59e0b !important;
-            background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.25) !important;
+            border-color: #ea2528 !important;
+            background: linear-gradient(135deg, #ffffff, #efeae1) !important;
+            box-shadow: 0 8px 25px rgba(234, 37, 40, 0.25) !important;
         }
 
         #orgchart .department-head .employee-icon {
-            background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+            background: linear-gradient(135deg, #ea2528, #2E2D29) !important;
         }
 
         /* QEHS group */
         #orgchart .sub-department {
-            border-color: #8b5cf6 !important;
-            background: linear-gradient(135deg, #ede9fe, #ddd6fe) !important;
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.25) !important;
+            border-color: #3d5073 !important;
+            background: linear-gradient(135deg, #efeae1, #ffffff) !important;
+            box-shadow: 0 8px 25px rgba(61, 80, 115, 0.25) !important;
         }
 
         #orgchart .sub-department .employee-icon {
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+            background: linear-gradient(135deg, #3d5073, #2E2D29) !important;
         }
 
         /* PMO group */
         #orgchart .project-manager,
         #orgchart .fleet-officer,
         #orgchart .warehouse-officer {
-            border-color: #ec4899 !important;
-            background: linear-gradient(135deg, #fce7f3, #fbcfe8) !important;
-            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.25) !important;
+            border-color: #ea2528 !important;
+            background: linear-gradient(135deg, #efeae1, #ffffff) !important;
+            box-shadow: 0 8px 25px rgba(234, 37, 40, 0.25) !important;
         }
 
         #orgchart .project-manager .employee-icon,
         #orgchart .fleet-officer .employee-icon,
         #orgchart .warehouse-officer .employee-icon {
-            background: linear-gradient(135deg, #ec4899, #db2777) !important;
+            background: linear-gradient(135deg, #ea2528, #2E2D29) !important;
         }

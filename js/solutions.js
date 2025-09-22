@@ -82,6 +82,7 @@ function handleYearContainerClick(event){
         // Collapse
         yearContent.style.maxHeight = "0px";
         yearContent.style.padding = "0px";
+        yearContent.style.opacity="0"
     } else {
         let verticalPadding = 18;
         // Expand: First set padding, then measure height
@@ -92,5 +93,7 @@ function handleYearContainerClick(event){
 
         // Now measure with padding included
         yearContent.style.maxHeight = yearContent.scrollHeight+(2 * verticalPadding) + "px";
+
+        yearContent.style.opacity="100%"
     }
 }

@@ -244,6 +244,10 @@
     padding: 20px;
     /* Match services-cards-container padding and gap */
 }
+
+.all-projects-container *{
+    cursor: pointer;
+}
 .year-container{
 
     width: 100%;
@@ -289,14 +293,17 @@
     background: #efeae1;
     border-radius: 10px;
     margin-top: 10px;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    /* transition: max-height 0.3s ease-out, padding 0.3s ease-out; */
+    transition: 0.3s ease-out;
     max-height: 0;
     overflow: hidden;
     box-sizing: border-box;
     padding: 0;
+
+    opacity: 0;
 }
 .year-content.expanded {
-    /* padding: 18px 24px; Padding only when expanded */
+    
 }
 
 /* Optional: Style project cards inside year-content to match service cards */

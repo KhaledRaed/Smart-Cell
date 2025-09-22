@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Cell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/header.css">
+    
+    <link rel="stylesheet" href="../css/generic.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/solutions.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #efeae1;
+            color: #2E2D29;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <section id="header">
+        <header>
+            <nav>
+                <div class="logo-container">
+                    <img src="../media/smartCellLogo.png" alt="Smart Cell Logo" class="logo">
+                    <span class="company-name">Smart Cell for Communication Systems and Contracting</span>
+                </div>
+
+
+                <ul class="nav-links">
+                    <li class="nav-item dropdown">
+                        <a href="../html/about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item"><i class="fas fa-code-branch"></i> Branches</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-phone"></i> Contact Us</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-certificate"></i> Policy &amp;
+                                Certification</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-sitemap"></i> Organization Chart</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-briefcase"></i> Solutions <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item"><i class="fas fa-cogs"></i> Services</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-handshake"></i> Our Clients</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-box"></i> Products</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="./index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link login-btn"><i class="fas fa-user"></i> Login</a>
+                    </li>
+                </ul>
+
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </nav>
+        </header>
+    </section>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar">
+        <button class="close-sidebar"><i class="fas fa-times"></i></button>
+        <ul class="sidebar-links">
+            <li class="sidebar-item">
+                <a href="../html/about.html" class="sidebar-link sidebar-toggle" data-dropdown="about-dropdown">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About Us</span>
+                    </div>
+                    <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
+                </a>
+                <div class="sidebar-dropdown" id="about-dropdown">
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Branches</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Contact Us</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Policy &amp; Certification</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Organization Chart</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link sidebar-toggle" data-dropdown="solutions-dropdown">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Solutions</span>
+                    </div>
+                    <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
+                </a>
+                <div class="sidebar-dropdown" id="solutions-dropdown">
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Services</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>Our Clients</span>
+                    </a>
+                    <a href="#" class="sidebar-dropdown-item">
+                        <i class="fas fa-box"></i>
+                        <span>Products</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" style="color: #3176ba;">
+                    <div class="sidebar-link-content">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- servies section -->
+    <section id="services">
+        <div class="services-container">
+            <h2 class="services-title">Our <span>Services</span></h2>
+
+
+            <div class="services-cards-container">
+
+                <div class="service-card-wrapper featured-card-wrapper hidden-sup" service-id="0">
+                    <div class="service-card featured-card">
+                        <img class="service-icon" src="../media/svg/wifi.svg" alt="">
+                        <h3>test</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In omnis quod ea temporibus soluta quibusdam pariatur, voluptate repellat doloremque, dignissimos repellendus beatae vitae molestiae ipsam ullam, culpa saepe a unde!</p>
+
+                        <div class="close-button">hide</div>
+                    </div>
+                </div>
+
+                <div class="service-card-wrapper" service-id="1">
+                    <div class="service-card">
+                        <img src="../media/svg/workers.svg" alt="manpower icon" class="service-icon">
+                        <h3>Manpower Outsourcing</h3>
+                        <p class="hidden">
+                            SMART Cell offers efficient and reliable manpower outsourcing solutions. We provide skilled and trained personnel across various disciplines, meeting specific project requirements. Our focus is on delivering qualified professionals to support your projects and optimize operational efficiency.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service-card-wrapper">
+                    <div class="service-card">
+                        <img src="../media/svg/wifi.svg" alt="manpower icon" class="service-icon">
+                        <h3>Telecom Wireless Installation and MW Installation</h3>
+                        <p class="hidden">
+                            We specialize in seamless installation of telecom wireless systems and microwave (MW) technology. Our expert team ensures precise and timely deployment, optimizing network connectivity and performance. SMART Cell's proficiency in telecom installations ensures enhanced communication capabilities and improved network coverage.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service-card-wrapper">
+                    <div class="service-card">
+                        <img src="../media/svg/solar-panel.svg" alt="manpower icon" class="service-icon">
+                        <h3>Power System Installation, UPS, and Solar System</h3>
+                        <p class="hidden">
+                            SMART Cell excels in the installation of robust power systems, including Uninterruptible Power Supplies (UPS) and solar solutions. We design and implement power infrastructure that guarantees uninterrupted electricity supply, incorporating sustainable solar technology to reduce environmental impact and enhance energy efficiency.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="service-card-wrapper">
+                    <div class="service-card">
+                        <img src="../media/svg/wifi.svg" alt="manpower icon" class="service-icon">
+                        <h3>Power System Installation, UPS, and Solar System</h3>
+                        <p class="hidden">
+                            SMART Cell excels in the installation of robust power systems, including Uninterruptible Power Supplies (UPS) and solar solutions. We design and implement power infrastructure that guarantees uninterrupted electricity supply, incorporating sustainable solar technology to reduce environmental impact and enhance energy efficiency.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="service-card-wrapper">
+                    <div class="service-card">
+                        <img src="../media/svg/wifi.svg" alt="manpower icon" class="service-icon">
+                        <h3>Power System Installation, UPS, and Solar System</h3>
+                        <p class="hidden">
+                            SMART Cell excels in the installation of robust power systems, including Uninterruptible Power Supplies (UPS) and solar solutions. We design and implement power infrastructure that guarantees uninterrupted electricity supply, incorporating sustainable solar technology to reduce environmental impact and enhance energy efficiency.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="service-card-wrapper">
+                    <div class="service-card">
+                        <img src="../media/svg/wifi.svg" alt="manpower icon" class="service-icon">
+                        <h3>Power System Installation, UPS, and Solar System</h3>
+                        <p class="hidden">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque alias ex sequi vel! Cupiditate quibusdam quaerat quia obcaecati sint id aliquid, magni dolorum blanditiis, iusto suscipit nostrum cumque optio odit.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="service-card-wrapper">
+                    <div class="service-card">
+                        <img src="../media/svg/wifi.svg" alt="manpower icon" class="service-icon">
+                        <h3>Power System Installation, UPS, and Solar System</h3>
+                        <p class="hidden">
+                            SMART Cell excels in the installation of robust power systems, including Uninterruptible Power Supplies (UPS) and solar solutions. We design and implement power infrastructure that guarantees uninterrupted electricity supply, incorporating sustainable solar technology to reduce environmental impact and enhance energy efficiency.
+                        </p>
+                    </div>
+                </div>
+                
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="clients">
+        <div class="clients-container">
+            <h2 class="clients-title"><span>Trusted</span> by</h2>
+
+            <div class="clients-cards-container">
+
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain ABC</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain ABC</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain ABC</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain ABC</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain ABC</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain ABC</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain ABC</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain ABC</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain ABC</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain ABC</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-card-background"></div>
+
+                        <img src="../media/clients-logo/ZainLogoBlack.png" alt="" class="client-logo">
+                        <p class="client-name">Zain ABC</p>
+                </div>
+                
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="projects-container">
+            <h2 class="clients-title">Our <span>Projects</span></h2>
+
+
+            <div class="all-projects-container">
+
+                <!-- this is year with projects inside? -->
+                <div class="year-container">
+                    <div class="year-header">
+                        <p>2025</p>
+                        <p>^</p>
+                    </div>
+
+                    <div class="year-content ">
+                        
+                        <ul>
+                            <li>proj</li>
+                            <li>proj2</li>
+                            <li>proj3</li>
+                            <li>proj4</li>
+                            <li>proj5</li>
+                            <li>proj6</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="year-container">
+                    <div class="year-header">
+                        <p>2025</p>
+                        <p>^</p>
+                    </div>
+
+                    <div class="year-content ">
+                        <p>test</p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p>test</p>
+                    </div>
+                </div>
+                <div class="year-container">
+                    <div class="year-header">
+                        <p>2025</p>
+                        <p>^</p>
+                    </div>
+
+                    <div class="year-content ">
+                        <p>test</p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p>test</p>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Company Info Section -->
+            <div class="footer-section footer-logo-section">
+                <div class="footer-brand">
+                    <img src="../media/smartCellLogo.png" alt="Smart Cell Logo" class="footer-logo">
+                    <div class="brand-text">
+                        <h2>Smart Cell</h2>
+                    </div>
+                </div>
+                <p class="footer-description">
+                    We are a leading company that specializes in telecommunications infrastructure, wireless networks,
+                    fiber optics, and power systems, dedicated to delivering outstanding services and innovative
+                    solutions.
+                </p>
+            </div>
+
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>Know More About Us</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#mission">Mission &amp; Vision</a></li>
+                    <li><a href="#goals">Our Goals</a></li>
+                    <li><a href="#numbers">Us in Numbers</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Section -->
+            <div class="footer-section">
+                <h3>Discover More</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#projects">Our Projects</a></li>
+                    <li><a href="#clients">Our Clients</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>Get In Touch</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Smart Cell</strong><br>
+                            <a href="https://maps.google.com" target="_blank">Amman, Jordan</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@smartcell.com.jo">info@smartcell.com.jo</a>
+                    </li>
+                </ul>
+                <div class="social-media">
+                    <a href="https://instagram.com/smartcell" class="social-link instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/smartcell" class="social-link linkedin" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://facebook.com/smartcell" class="social-link facebook" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../js/header.js"></script>
+    <script src="../js/solutions.js"></script>
+    
+</body>
+
+</html>

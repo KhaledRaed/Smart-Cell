@@ -56,3 +56,36 @@ function handleClientCardHoverIn(event){
 
     currentCardBackground.classList.add('client-card-background-hover');
 }
+
+
+
+
+
+
+
+
+// ///////////////////////////////////////////////////////
+// this is for handling the projects section
+
+let allYearsContainers = document.querySelectorAll(".year-container");
+
+allYearsContainers.forEach(container=>{
+    container.addEventListener('click',handleYearContainerClick);
+});
+
+
+function handleYearContainerClick(event){
+    // console.log(event.currentTarget.innerHTML)
+
+    // console.log(event.currentTarget.querySelector(".year-content"));
+    
+    // event.currentTarget.querySelector(".year-content").classList.toggle("year-content-expanded");
+
+    let yearContent = event.currentTarget.querySelector(".year-content");
+    
+    if(yearContent.style.maxHeight=='0px'){
+        yearContent.style.maxHeight=yearContent.scrollHeight+'px';
+    }else{
+        yearContent.style.maxHeight=0+'px';
+    }
+}

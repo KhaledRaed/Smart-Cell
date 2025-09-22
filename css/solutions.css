@@ -240,37 +240,80 @@
 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
+    padding: 20px;
+    /* Match services-cards-container padding and gap */
 }
 .year-container{
 
     width: 100%;
-    height: fit-content;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    border: 1px solid black;
-    background-color: red;
-    
-    overflow: hidden;
+    min-width: 320px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #3176ba, #c03435);
+    border-radius: 15px;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: 0.2s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    /* Remove old border and background */
+    border: none;
+    /* overflow: hidden; already present */
 }
 
-.year-header{
-    
-    width: 70%;
-    
-    border: 1px solid black;
+.year-container:hover {
+    background: linear-gradient(135deg, #3176ba, #c03435 80%);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+    transform: translateY(-5px) scale(1.01);
+}
+
+.year-header {
+    width: 100%;
+    background: #efeae1;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
-
+    align-items: center;
+    padding: 18px 24px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2e2d29;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    border: none;
+    /* Remove old border */
 }
 
-.year-content{
-    transition:max-height 0.3s;
-    max-height:0px;
+.year-content {
+    width: 100%;
+    background: #efeae1;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0;
 }
-.year-content-expanded{
-    /* max-height:600px ; */
+.year-content.expanded {
+    /* padding: 18px 24px; Padding only when expanded */
+}
+
+/* Optional: Style project cards inside year-content to match service cards */
+.project-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(49, 118, 186, 0.08);
+    padding: 16px;
+    margin-bottom: 16px;
+    color: #2e2d29;
+    font-size: 1rem;
+    transition: box-shadow 0.2s;
+}
+.project-card:last-child {
+    margin-bottom: 0;
+}
+.project-card:hover {
+    box-shadow: 0 4px 16px rgba(49, 118, 186, 0.18);
+    background: #f5f8fa;
 }

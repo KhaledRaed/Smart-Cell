@@ -75,17 +75,22 @@ allYearsContainers.forEach(container=>{
 
 
 function handleYearContainerClick(event){
-    // console.log(event.currentTarget.innerHTML)
-
-    // console.log(event.currentTarget.querySelector(".year-content"));
-    
-    // event.currentTarget.querySelector(".year-content").classList.toggle("year-content-expanded");
-
     let yearContent = event.currentTarget.querySelector(".year-content");
-    
-    if(yearContent.style.maxHeight=='0px'){
-        yearContent.style.maxHeight=yearContent.scrollHeight+'px';
-    }else{
-        yearContent.style.maxHeight=0+'px';
+    if (!yearContent) return;
+
+    if (yearContent.style.maxHeight && yearContent.style.maxHeight !== "0px") {
+        // Collapse
+        yearContent.style.maxHeight = "0px";
+        yearContent.style.padding = "0px";
+    } else {
+        let verticalPadding = 18;
+        // Expand: First set padding, then measure height
+        yearContent.style.padding = `${verticalPadding}px 24px`;
+        // Force a reflow to ensure padding is applied
+        // yearContent.offsetHeight;
+
+
+        // Now measure with padding included
+        yearContent.style.maxHeight = yearContent.scrollHeight+(2 * verticalPadding) + "px";
     }
 }

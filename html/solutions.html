@@ -406,7 +406,6 @@
                     </div>
                 </div>
 
-
                 <button class="help-btn" aria-label="Show help information">
                     <span aria-hidden="true">?</span>
                     Help
@@ -419,12 +418,9 @@
                 <div id="compactView" class="compact-timeline" role="main" aria-label="Company timeline in card view">
                 </div>
 
-
                 <div id="traditionalView" class="traditional-timeline" role="main" aria-label="Company timeline in traditional view">
                     <div class="timeline-line" aria-hidden="true"></div>
                 </div>
-
-
 
                 <div id="projectsSection" class="projects-section" role="region" aria-labelledby="projectsTitle">
                     <div class="projects-header">
@@ -434,13 +430,37 @@
                             Close
                         </button>
                     </div>
+                    <div id="projectsGrid" class="projects-grid" aria-live="polite">
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div id="helpModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2 id="helpTitle" class="modal-title">How to Use</h2>
+                    <button class="close-btn" aria-label="Close help modal">&times;</button>
                 </div>
 
-                <div id="projectsGrid" class="projects-grid" aria-live="polite">
-                    </div>
+                <div class="help-section">
+                    <h3>Navigation</h3>
+                    <p><strong>Card View:</strong> Click on any year card to view its projects below. Click again to collapse.</p>
+                    <p><strong>Timeline View:</strong> Traditional vertical timeline with year markers. Click markers to expand projects.</p>
+                </div>
 
+                <div class="help-section">
+                    <h3>Filtering</h3>
+                    <p>Use the year filter dropdown to focus on specific time periods. This helps you quickly find relevant information.</p>
+                </div>
 
-            </main>
+                <div class="help-section">
+                    <h3>Keyboard Shortcuts</h3>
+                    <p><strong>Tab:</strong> Navigate between interactive elements</p>
+                    <p><strong>Enter/Space:</strong> Activate buttons and cards</p>
+                    <p><strong>Escape:</strong> Close modals or collapse expanded sections</p>
+                </div>
+            </div>
         </div>
     </section>
 

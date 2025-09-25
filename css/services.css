@@ -1,0 +1,104 @@
+#services{
+    
+}
+.services-container{
+    
+}
+
+.services-title{
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #2e2d29;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+.services-title span {
+    background: linear-gradient(135deg, #3176ba, #c03435);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.services-cards-container{
+    display: grid;
+    /* grid-template-columns: repeat(3,1fr); */
+    /* grid-template-columns: repeat(auto-fit,minmax(170px,1fr)); */
+
+    /* flexible responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    /* optional: center items on last row */
+    justify-items: center;
+    justify-content: center;
+
+    align-items: stretch;
+
+    /* grid-template-rows:max-content; */
+    grid-auto-rows:1fr;
+
+    gap: 40px;
+
+    padding: 20px;
+}
+
+/* this class is for having a modular border around the cards with the original gradient , to have the correct border radius follow the formula : 
+
+    ! wrapper border radius = inner card border radius + wrapper padding 
+    ?dont forget -_-
+
+*/
+.service-card-wrapper{
+    box-sizing: border-box;
+    transition:0.2s;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(135deg, #3176ba, #3176ba);
+    border-radius: 15px;
+
+    padding: 5px;
+}
+.service-card-wrapper:hover{
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, #3176ba, #c03435);
+
+    /* box-shadow: 0 10px 20px rgba(0,0,0,0.6); */
+    box-shadow: 0 4px 16px rgba(49, 118, 186, 0.18);
+
+}
+
+.service-card-wrapper * {
+    cursor: pointer;
+}
+
+.service-card{
+    height: 100%;
+    min-width: 170px;
+    width: 100%;
+
+
+
+
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 10px;
+    background-color: #efeae1;
+    border-radius: 10px;
+}
+
+.service-icon{
+    height: 30px;
+}
+.service-card p{
+    padding-top: 30px;
+}
+.service-card h3{
+    
+}

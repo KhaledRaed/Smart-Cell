@@ -1,7 +1,12 @@
+
 #services{
-    
+    width: 100%;
+    height: fit-content;
 }
 .services-container{
+    width: 100%;
+
+    padding: 20px;
     
 }
 
@@ -39,7 +44,7 @@
 
     gap: 40px;
 
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 /* this class is for having a modular border around the cards with the original gradient , to have the correct border radius follow the formula : 

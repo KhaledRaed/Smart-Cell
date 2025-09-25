@@ -80,9 +80,9 @@ body {
     padding: 0 2rem;
 }
 
-.header h1 {
+.header  h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 3.5rem, 4.5rem);
     font-weight: 800;
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
@@ -456,7 +456,7 @@ body {
     border-bottom: 2px solid var(--border-light);
 }
 
-.projects-section h2 {
+.projects-section h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.75rem;
     font-weight: 700;

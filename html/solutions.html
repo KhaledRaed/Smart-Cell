@@ -17,6 +17,9 @@
 
 
     <style>
+        html{
+            scroll-behavior: smooth !important; 
+        }
         * {
             margin: 0;
             padding: 0;
@@ -49,7 +52,7 @@
                         </a>
                         <div class="dropdown-menu">
                             <a href="../html/about.html#branches" class="dropdown-item"><i class="fas fa-code-branch"></i> Branches</a>
-                            <a href="#policy" class="dropdown-item"><i class="fas fa-certificate"></i> Policy &
+                            <a href="#policy" class="dropdown-item"><i class="fas fa-certificate"></i> Policy &amp;
                                 Certification</a>
                             <a href="../html/about.html#orgchart" class="dropdown-item"><i class="fas fa-sitemap"></i> Organization
                                 Chart</a>
@@ -63,8 +66,8 @@
                             <i class="fas fa-briefcase"></i> Solutions <i class="fas fa-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item"><i class="fas fa-cogs"></i> Services</a>
-                            <a href="#" class="dropdown-item"><i class="fas fa-handshake"></i> Our Clients</a>
+                            <a href="#services" class="dropdown-item"><i class="fas fa-cogs"></i> Services</a>
+                            <a href="#clients" class="dropdown-item"><i class="fas fa-handshake"></i> Our Clients</a>
                             <a href="#projects" class="dropdown-item"><i class="fas fa-box"></i> Projects</a>
                         </div>
                     </li>
@@ -247,103 +250,6 @@
     </section>
 
 
-
-
-    
-
-    <!-- projects section -->
-
-    <section id="projects">
-        <div class="header">
-            <div class="header-content">
-                <h1>Company Timeline</h1>
-                <p>Explore our journey of innovation and technological evolution</p>
-            </div>
-        </div>
-
-        <div class="controls">
-            <div class="controls-content">
-                <div class="view-toggle" role="tablist" aria-label="Timeline view options">
-                    <button class="toggle-btn active" role="tab" data-view="compact" aria-selected="true" id="compact-tab">
-                        Card View
-                    </button>
-                    <button class="toggle-btn" role="tab" data-view="traditional" aria-selected="false" id="traditional-tab">
-                        Timeline View
-                    </button>
-                </div>
-
-                <div class="year-filter">
-                    <label for="yearRange">Filter by years:</label>
-                    <div class="dropdown-container">
-                        <select class="filter-select" id="yearRange" aria-label="Filter timeline by year range">
-                            <option value="all">All Years (2010-2025)</option>
-                            <option value="recent">Recent (2020-2025)</option>
-                            <option value="modern">Modern Era (2015-2019)</option>
-                            <option value="early">Early Years (2010-2014)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button class="help-btn" aria-label="Show help information">
-                    <span aria-hidden="true">?</span>
-                    Help
-                </button>
-            </div>
-        </div>
-
-        <div class="timeline-container">
-            <main id="main-content">
-                <div id="compactView" class="compact-timeline" role="main" aria-label="Company timeline in card view">
-                </div>
-
-                <div id="traditionalView" class="traditional-timeline" role="main" aria-label="Company timeline in traditional view">
-                    <div class="timeline-line" aria-hidden="true"></div>
-                </div>
-
-                <div id="projectsSection" class="projects-section" role="region" aria-labelledby="projectsTitle">
-                    <div class="projects-header">
-                        <h2 id="projectsTitle">Projects</h2>
-                        <button class="projects-close-btn" aria-label="Close projects section">
-                            <span aria-hidden="true">×</span>
-                            Close
-                        </button>
-                    </div>
-                    <div id="projectsGrid" class="projects-grid" aria-live="polite">
-                    </div>
-                </div>
-            </main>
-        </div>
-
-        <div id="helpModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
-            <div class="modal">
-                <div class="modal-header">
-                    <h2 id="helpTitle" class="modal-title">How to Use</h2>
-                    <button class="close-btn" aria-label="Close help modal">&times;</button>
-                </div>
-
-                <div class="help-section">
-                    <h3>Navigation</h3>
-                    <p><strong>Card View:</strong> Click on any year card to view its projects below. Click again to collapse.</p>
-                    <p><strong>Timeline View:</strong> Traditional vertical timeline with year markers. Click markers to expand projects.</p>
-                </div>
-
-                <div class="help-section">
-                    <h3>Filtering</h3>
-                    <p>Use the year filter dropdown to focus on specific time periods. This helps you quickly find relevant information.</p>
-                </div>
-
-                <div class="help-section">
-                    <h3>Keyboard Shortcuts</h3>
-                    <p><strong>Tab:</strong> Navigate between interactive elements</p>
-                    <p><strong>Enter/Space:</strong> Activate buttons and cards</p>
-                    <p><strong>Escape:</strong> Close modals or collapse expanded sections</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
     <!-- clients section -->
     <section id="clients">
         <div class="clients-container">
@@ -468,6 +374,100 @@
             </div>
         </div>
     </section>
+
+
+
+    <!-- projects section -->
+
+    <section id="projects">
+        <div class="header">
+            <div class="header-content">
+                <h2>Our Projects</h2>
+                <p>Explore our journey of innovation and technological evolution</p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="controls-content">
+                <div class="view-toggle" role="tablist" aria-label="Timeline view options">
+                    <button class="toggle-btn active" role="tab" data-view="compact" aria-selected="true" id="compact-tab">
+                        Card View
+                    </button>
+                    <button class="toggle-btn" role="tab" data-view="traditional" aria-selected="false" id="traditional-tab">
+                        Timeline View
+                    </button>
+                </div>
+
+                <div class="year-filter">
+                    <label for="yearRange">Filter by years:</label>
+                    <div class="dropdown-container">
+                        <select class="filter-select" id="yearRange" aria-label="Filter timeline by year range">
+                            <option value="all">All Years (2010-2025)</option>
+                            <option value="recent">Recent (2020-2025)</option>
+                            <option value="modern">Modern Era (2015-2019)</option>
+                            <option value="early">Early Years (2010-2014)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="help-btn" aria-label="Show help information">
+                    <span aria-hidden="true">?</span>
+                    Help
+                </button>
+            </div>
+        </div>
+
+        <div class="timeline-container">
+            <main id="main-content">
+                <div id="compactView" class="compact-timeline" role="main" aria-label="Company timeline in card view">
+                </div>
+
+                <div id="traditionalView" class="traditional-timeline" role="main" aria-label="Company timeline in traditional view">
+                    <div class="timeline-line" aria-hidden="true"></div>
+                </div>
+
+                <div id="projectsSection" class="projects-section" role="region" aria-labelledby="projectsTitle">
+                    <div class="projects-header">
+                        <h3 id="projectsTitle">Projects</h3>
+                        <button class="projects-close-btn" aria-label="Close projects section">
+                            <span aria-hidden="true">×</span>
+                            Close
+                        </button>
+                    </div>
+                    <div id="projectsGrid" class="projects-grid" aria-live="polite">
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div id="helpModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2 id="helpTitle" class="modal-title">How to Use</h2>
+                    <button class="close-btn" aria-label="Close help modal">&times;</button>
+                </div>
+
+                <div class="help-section">
+                    <h3>Navigation</h3>
+                    <p><strong>Card View:</strong> Click on any year card to view its projects below. Click again to collapse.</p>
+                    <p><strong>Timeline View:</strong> Traditional vertical timeline with year markers. Click markers to expand projects.</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>Filtering</h3>
+                    <p>Use the year filter dropdown to focus on specific time periods. This helps you quickly find relevant information.</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>Keyboard Shortcuts</h3>
+                    <p><strong>Tab:</strong> Navigate between interactive elements</p>
+                    <p><strong>Enter/Space:</strong> Activate buttons and cards</p>
+                    <p><strong>Escape:</strong> Close modals or collapse expanded sections</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <!-- Footer Section -->

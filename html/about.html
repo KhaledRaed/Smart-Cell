@@ -19,8 +19,10 @@
     <link rel="stylesheet" href="../css/policy-Certifi.css">
     <link rel="stylesheet" href="../css/orgChart.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="">
     <style>
+        html{
+            scroll-behavior: smooth; 
+        }
         * {
             margin: 0;
             padding: 0;
@@ -45,7 +47,6 @@
             <nav>
                 <div class="logo-container">
                     <img src="../media/smartCellLogo.png" alt="Smart Cell Logo" class="logo">
-                    <!-- <span class="company-name">Smart Cell for Communication Systems and Contracting</span> -->
                 </div>
 
                 <ul class="nav-links">
@@ -54,12 +55,11 @@
                             <i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu">
-
-                            <a href="#branches" class="dropdown-item"><i class="fas fa-code-branch"></i> Branches</a>
-                            <a href="#policy" class="dropdown-item"><i class="fas fa-certificate"></i> Policy &amp;
-
+                            <a href="../html/about.html#branches" class="dropdown-item"><i class="fas fa-code-branch"></i> Branches</a>
+                            <a href="../html/about.html#policy" class="dropdown-item"><i class="fas fa-certificate"></i> Policy &amp;
                                 Certification</a>
-                            <a href="#orgchart" class="dropdown-item"><i class="fas fa-sitemap"></i> Organization Chart</a>
+                            <a href="../html/about.html#orgchart" class="dropdown-item"><i class="fas fa-sitemap"></i> Organization
+                                Chart</a>
                             <a href="../html/contact.html" class="dropdown-item"><i class="fas fa-phone"></i> Contact
                                 Us</a>
 
@@ -70,28 +70,28 @@
                             <i class="fas fa-briefcase"></i> Solutions <i class="fas fa-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item"><i class="fas fa-cogs"></i> Services</a>
-                            <a href="#" class="dropdown-item"><i class="fas fa-handshake"></i> Our Clients</a>
-                            <a href="../html/solutions.html#projects" class="dropdown-item"><i class="fas fa-box"></i> Projects</a>
+                            <a href="./solutions.html#services" class="dropdown-item"><i class="fas fa-cogs"></i> Services</a>
+                            <a href="./solutions.html#clients" class="dropdown-item"><i class="fas fa-handshake"></i> Our Clients</a>
+                            <a href="./solutions.html#projects" class="dropdown-item"><i class="fas fa-box"></i> Projects</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="../html/index.html" class="nav-link"><i class="fas fa-home"></i>
+                    <li class="nav-item"><a href="./index.html" class="nav-link"><i class="fas fa-home"></i>
                             Home</a></li>
                     <li class="nav-item"><a href="https://ses-jo.com/pmonew/wp-login.php?redirect_to=https%3A%2F%2Fses-jo.com%2Fpmonew%2Fwp-admin%2F&reauth=1" class="nav-link login-btn"><i class="fas fa-user"></i> Login</a>
                     </li>
                 </ul>
 
-                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+                <button type="button" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
             </nav>
         </header>
     </section>
 
     <!-- Sidebar Menu -->
     <div class="sidebar">
-        <button class="close-sidebar"><i class="fas fa-times"></i></button>
+        <button type="button" class="close-sidebar"><i class="fas fa-times"></i></button>
         <ul class="sidebar-links">
             <li class="sidebar-item">
-                <a href="../html/about.html" class="sidebar-link sidebar-toggle" data-dropdown="about-dropdown">
+                <a href="./about.html" class="sidebar-link sidebar-toggle" data-dropdown="about-dropdown">
                     <div class="sidebar-link-content">
                         <i class="fas fa-info-circle"></i>
                         <span>About Us</span>
@@ -99,26 +99,26 @@
                     <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
                 </a>
                 <div class="sidebar-dropdown" id="about-dropdown">
-                    <a href="#branches" class="sidebar-dropdown-item">
+                    <a href="./about.html#branches" class="sidebar-dropdown-item">
                         <i class="fas fa-code-branch"></i>
                         <span>Branches</span>
                     </a>
-                    <a href="../html/contact.html" class="sidebar-dropdown-item">
+                    <a href="./contact.html" class="sidebar-dropdown-item">
                         <i class="fas fa-phone"></i>
                         <span>Contact Us</span>
                     </a>
-                    <a href="#policy" class="sidebar-dropdown-item">
+                    <a href="./about.html#policy" class="sidebar-dropdown-item">
                         <i class="fas fa-certificate"></i>
-                        <span>Policy & Certification</span>
+                        <span>Policy &amp; Certification</span>
                     </a>
-                    <a href="#orgchart" class="sidebar-dropdown-item">
+                    <a href="./about.html#orgchart" class="sidebar-dropdown-item">
                         <i class="fas fa-sitemap"></i>
                         <span>Organization Chart</span>
                     </a>
                 </div>
             </li>
             <li class="sidebar-item">
-                <a href="../html/solutions.html" class="sidebar-link sidebar-toggle" data-dropdown="solutions-dropdown">
+                <a href="./solutions.html" class="sidebar-link sidebar-toggle" data-dropdown="solutions-dropdown">
                     <div class="sidebar-link-content">
                         <i class="fas fa-briefcase"></i>
                         <span>Solutions</span>
@@ -126,22 +126,22 @@
                     <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
                 </a>
                 <div class="sidebar-dropdown" id="solutions-dropdown">
-                    <a href="#" class="sidebar-dropdown-item">
+                    <a href="./solutions.html#services" class="sidebar-dropdown-item">
                         <i class="fas fa-cogs"></i>
                         <span>Services</span>
                     </a>
-                    <a href="#" class="sidebar-dropdown-item">
+                    <a href="./solutions.html#clients" class="sidebar-dropdown-item">
                         <i class="fas fa-handshake"></i>
                         <span>Our Clients</span>
                     </a>
-                    <a href="../html/solutions.html#projects" class="sidebar-dropdown-item">
+                    <a href="./solutions.html#projects" class="sidebar-dropdown-item">
                         <i class="fas fa-box"></i>
-                        <span>Projects</span>
+                        <span>projects</span>
                     </a>
                 </div>
             </li>
             <li class="sidebar-item">
-                <a href="../html/index.html" class="sidebar-link">
+                <a href="./index.html" class="sidebar-link">
                     <div class="sidebar-link-content">
                         <i class="fas fa-home"></i>
                         <span>Home</span>
@@ -346,7 +346,7 @@
 
             <!-- Jordan -->
             <div id="branch-jordan" class="branch-details">
-                <button class="close-btn" onclick="closeBranch()">×</button>
+                <button type="button" class="close-btn" onclick="closeBranch()">×</button>
                 <div class="details-content">
                     <div class="branch-info">
                         <h3>Jordan Branch</h3>
@@ -365,7 +365,7 @@
 
             <!-- Egypt -->
             <div id="branch-egypt" class="branch-details">
-                <button class="close-btn" onclick="closeBranch()">×</button>
+                <button type="button" class="close-btn" onclick="closeBranch()">×</button>
                 <div class="details-content">
                     <div class="branch-info">
                         <h3>Egypt Branch</h3>
@@ -384,7 +384,7 @@
 
             <!-- Saudi -->
             <div id="branch-saudi" class="branch-details">
-                <button class="close-btn" onclick="closeBranch()">×</button>
+                <button type="button" class="close-btn" onclick="closeBranch()">×</button>
                 <div class="details-content">
                     <div class="branch-info">
                         <h3>Saudi Arabia Branch</h3>
@@ -434,7 +434,7 @@
                             both
                             our employees and the community.</p>
                     </div>
-                    <button class="read-more">Explore Full Policy ↓</button>
+                    <button type="button" class="read-more">Explore Full Policy ↓</button>
                 </div>
 
                 <!-- Quality Policy -->
@@ -464,7 +464,7 @@
                             telecommunications services, known for our unwavering commitment to excellence and customer
                             satisfaction.</p>
                     </div>
-                    <button class="read-more">Discover More Details ↓</button>
+                    <button type="button" class="read-more">Discover More Details ↓</button>
                 </div>
             </div>
 
@@ -599,7 +599,7 @@
                                     <i class="fas fa-hard-hat"></i>
                                 </div>
                                 <div class="node-info">
-                                    <div class="employee-name">Health & Safety Officer</div>
+                                    <div class="employee-name">Health &amp; Safety Officer</div>
                                 </div>
                             </div>
                             <div class="node sub-department" id="inspector" data-parent="qehs"
@@ -608,7 +608,7 @@
                                     <i class="fas fa-clipboard-check"></i>
                                 </div>
                                 <div class="node-info">
-                                    <div class="employee-name">Health & Safety Inspector</div>
+                                    <div class="employee-name">Health &amp; Safety Inspector</div>
                                 </div>
                             </div>
                         </div>
@@ -673,9 +673,9 @@
             <div class="footer-section">
                 <h3>Know More About Us</h3>
                 <ul class="footer-links">
-                    <li><a href="../html/about.html">About Us</a></li>
-                    <li><a href="#Mission">Mission &amp; Vision</a></li>
-                    <li><a href="#branches">branches</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./about.html#Mission">Mission &amp; Vision</a></li>
+                    <li><a href="./about.html#branches">branches</a></li>
                     <li><a href="./index.html#impact">Us in Numbers</a></li>
                 </ul>
             </div>
@@ -684,10 +684,10 @@
             <div class="footer-section">
                 <h3>Discover More</h3>
                 <ul class="footer-links">
-                    <li><a href="#services">Our Services</a></li>
-                    <li><a href="../html/solutions.html#projects">Our Projects</a></li>
-                    <li><a href="#clients">Our Clients</a></li>
-                    <li><a href="#orgchart">Our Leaders</a></li>
+                    <li><a href="./solutions.html#services">Our Services</a></li>
+                    <li><a href="./solutions.html#projects">Our Projects</a></li>
+                    <li><a href="./solutions.html#clients">Our Clients</a></li>
+                    <li><a href="./about.html#orgchart">Our Leaders</a></li>
                 </ul>
             </div>
 
@@ -724,7 +724,7 @@
     <script src="../js/branches.js"></script>
     <script src="../js/policy-Certifi.js"></script>
     <script src="../js/orgChart.js"></script>
-    
+
 </body>
 
 </html>

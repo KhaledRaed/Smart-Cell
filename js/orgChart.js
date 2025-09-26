@@ -1,4 +1,4 @@
- class OrganizationChart {
+class OrganizationChart {
             constructor() {
                 this.svg = document.getElementById("connectors");
                 this.orgChart = document.getElementById("orgChart");
@@ -21,10 +21,27 @@
                         const node = e.target.closest(".node");
                         const nodeId = node.id;
                         const isExpanded = e.target.getAttribute('data-state') === 'expanded';
+                        
+                        // Handle mutually exclusive behavior for QEHS and PMO
+                        if (nodeId === 'qehs' || nodeId === 'pmo') {
+                            if (!isExpanded) { // If we're about to expand
+                                const otherNodeId = nodeId === 'qehs' ? 'pmo' : 'qehs';
+                                const otherToggle = document.querySelector(`#${otherNodeId} .toggle`);
+                                if (otherToggle && otherToggle.getAttribute('data-state') === 'expanded') {
+                                    // Close the other branch
+                                    this.closeBranch(otherNodeId);
+                                }
+                            }
+                        }
+                        
                         this.toggleBranch(nodeId, !isExpanded);
                         // Update toggle icon immediately
                         e.target.textContent = !isExpanded ? "▼" : "▶";
                         e.target.setAttribute('data-state', !isExpanded ? 'expanded' : 'collapsed');
+                        // Update children container visibility if closing exec, qehs, or pmo
+                        if (nodeId === 'exec' || nodeId === 'qehs' || nodeId === 'pmo') {
+                            this.updateChildrenContainerVisibility();
+                        }
                         // Redraw connectors after animation completes
                         setTimeout(() => {
                             this.calculateNodePositions();
@@ -37,20 +54,26 @@
                         const nodeId = node.id;
                         const isExpanded = toggle.getAttribute('data-state') === 'expanded';
                         
-                        // Special behavior: When PMO is clicked, close QEHS
-                        if (nodeId === 'pmo') {
-                            this.closeQEHS();
+                        // Handle mutually exclusive behavior for QEHS and PMO
+                        if (nodeId === 'qehs' || nodeId === 'pmo') {
+                            if (!isExpanded) { // If we're about to expand
+                                const otherNodeId = nodeId === 'qehs' ? 'pmo' : 'qehs';
+                                const otherToggle = document.querySelector(`#${otherNodeId} .toggle`);
+                                if (otherToggle && otherToggle.getAttribute('data-state') === 'expanded') {
+                                    // Close the other branch
+                                    this.closeBranch(otherNodeId);
+                                }
+                            }
                         }
-                        
-                        // Special behavior: When QEHS is clicked, close PMO
-                        if (nodeId === 'qehs') {
-                            this.closePMO();
-                        }
-                        
+
                         this.toggleBranch(nodeId, !isExpanded);
                         // Update toggle icon immediately
                         toggle.textContent = !isExpanded ? "▼" : "▶";
                         toggle.setAttribute('data-state', !isExpanded ? 'expanded' : 'collapsed');
+                        // Update children container visibility if closing exec, qehs, or pmo
+                        if (nodeId === 'exec' || nodeId === 'qehs' || nodeId === 'pmo') {
+                            this.updateChildrenContainerVisibility();
+                        }
                         // Redraw connectors after animation completes
                         setTimeout(() => {
                             this.calculateNodePositions();
@@ -93,14 +116,14 @@
                 const orgChartRect = this.orgChart.getBoundingClientRect();
                 this.svg.setAttribute('width', orgChartRect.width);
                 this.svg.setAttribute('height', orgChartRect.height);
-                
+
                 try {
                     // Connection from GM to Exec
                     if (this.isElementVisible(document.getElementById('gm')) &&
                         this.isElementVisible(document.getElementById('exec'))) {
                         this.drawDirectConnection('gm', 'exec');
                     }
-                    
+
                     // Connections from Exec to its direct children
                     const execChildrenIds = ['legal', 'finance', 'hr', 'qehs', 'pmo'];
                     const visibleExecChildren = execChildrenIds.filter(id => {
@@ -110,34 +133,8 @@
                     if (visibleExecChildren.length > 0 && this.isElementVisible(document.getElementById('exec'))) {
                         this.drawMultipleConnections('exec', visibleExecChildren);
                     }
-                    
-                    // Connections from QEHS to its children (left side)
-                    const qehsChildrenIds = ['quality', 'safety', 'inspector', 'environment'];
-                    const qehsGroup = document.querySelector('.children-group.qehs-side');
-                    const qehsNode = document.getElementById('qehs');
-                    if (qehsGroup && this.isElementVisible(qehsGroup) && qehsNode && this.isElementVisible(qehsNode)) {
-                        const visibleQehsChildren = qehsChildrenIds.filter(id => {
-                            const element = document.getElementById(id);
-                            return element && this.isElementVisible(element);
-                        });
-                        if (visibleQehsChildren.length > 0) {
-                            this.drawSideConnections('qehs', visibleQehsChildren, 'left');
-                        }
-                    }
-                    
-                    // Connections from PMO to its children (right side)
-                    const pmoChildrenIds = ['proj', 'fleet', 'warehouse', 'coordinator'];
-                    const pmoGroup = document.querySelector('.children-group.pmo-side');
-                    const pmoNode = document.getElementById('pmo');
-                    if (pmoGroup && this.isElementVisible(pmoGroup) && pmoNode && this.isElementVisible(pmoNode)) {
-                        const visiblePmoChildren = pmoChildrenIds.filter(id => {
-                            const element = document.getElementById(id);
-                            return element && this.isElementVisible(element);
-                        });
-                        if (visiblePmoChildren.length > 0) {
-                            this.drawSideConnections('pmo', visiblePmoChildren, 'right');
-                        }
-                    }
+
+                    // Note: Removed connectors for QEHS and PMO children as requested
                 } catch (error) {
                     console.error("Error drawing connectors:", error);
                 }
@@ -170,54 +167,6 @@
                     this.drawLine(childPos.x, horizontalY, childPos.x, childPos.y, this.getConnectorClass(parentId));
                 });
             }
-            // Special connections for QEHS and PMO children in side-by-side layout
-            drawSideConnections(parentId, childIds, side) {
-                if (!this.nodePositions.has(parentId) || childIds.length === 0) return;
-                const parentPos = this.nodePositions.get(parentId);
-                const childrenPos = childIds.map(id => this.nodePositions.get(id)).filter(pos => pos);
-                if (childrenPos.length === 0) return;
-                
-                const isMobile = window.innerWidth <= 1200;
-                
-                if (isMobile) {
-                    // Mobile: use standard multiple connections
-                    this.drawMultipleConnections(parentId, childIds);
-                    return;
-                }
-                
-                // Desktop: draw connections for side-by-side layout
-                const minChildY = Math.min(...childrenPos.map(pos => pos.y));
-                const maxChildY = Math.max(...childrenPos.map(pos => pos.y));
-                const horizontalY = parentPos.bottomY + (minChildY - parentPos.bottomY) / 2;
-                
-                // Vertical line from parent down to horizontal connector
-                this.drawLine(parentPos.x, parentPos.bottomY, parentPos.x, horizontalY, this.getConnectorClass(parentId));
-                
-                // Calculate the horizontal connector position based on side
-                let connectorX;
-                if (side === 'left') {
-                    // For QEHS (left side), extend left from parent
-                    connectorX = parentPos.x - 120;
-                } else {
-                    // For PMO (right side), extend right from parent
-                    connectorX = parentPos.x + 120;
-                }
-                
-                // Horizontal connector line
-                this.drawLine(parentPos.x, horizontalY, connectorX, horizontalY, this.getConnectorClass(parentId));
-                
-                // Vertical line from horizontal connector down to children area
-                const childrenAreaY = horizontalY + (maxChildY - horizontalY) / 2;
-                this.drawLine(connectorX, horizontalY, connectorX, childrenAreaY, this.getConnectorClass(parentId));
-                
-                // Connect to each child
-                childrenPos.forEach((childPos) => {
-                    // Horizontal line to child's x position
-                    this.drawLine(connectorX, childrenAreaY, childPos.x, childrenAreaY, this.getConnectorClass(parentId));
-                    // Vertical line down to child
-                    this.drawLine(childPos.x, childrenAreaY, childPos.x, childPos.y, this.getConnectorClass(parentId));
-                });
-            }
             getConnectorClass(parentId) {
                 if (parentId === 'qehs') {
                     return 'connector connector-qehs';
@@ -239,15 +188,16 @@
             toggleBranch(nodeId, expand) {
                 if (!expand) {
                     this.closeAllChildren(nodeId);
+                    this.updateChildrenContainerVisibility();
                     return;
                 }
-                
+
                 // Show direct child levels for this node
                 const levels = document.querySelectorAll(`.level[data-parent="${nodeId}"]`);
                 levels.forEach(level => {
                     level.style.display = 'flex';
                 });
-                
+
                 // Handle children grids for 'qehs' and 'pmo'
                 if (nodeId === 'qehs' || nodeId === 'pmo') {
                     const childrenContainer = document.getElementById('children-container');
@@ -257,6 +207,36 @@
                         childrenContainer.style.display = 'flex';
                         targetGroup.style.display = 'flex';
                     }
+                }
+            }
+            closeBranch(nodeId) {
+                // Close a specific branch and update its toggle
+                this.closeAllChildren(nodeId);
+                const toggle = document.querySelector(`#${nodeId} .toggle`);
+                if (toggle) {
+                    toggle.textContent = "▶";
+                    toggle.setAttribute('data-state', 'collapsed');
+                }
+                // Update container visibility if this is qehs or pmo
+                if (nodeId === 'qehs' || nodeId === 'pmo') {
+                    this.updateChildrenContainerVisibility();
+                }
+            }
+            updateChildrenContainerVisibility() {
+                const qehsToggle = document.querySelector('#qehs .toggle');
+                const pmoToggle = document.querySelector('#pmo .toggle');
+                const childrenContainer = document.getElementById('children-container');
+                
+                if (!childrenContainer) return;
+                
+                const isQehsExpanded = qehsToggle && qehsToggle.getAttribute('data-state') === 'expanded';
+                const isPmoExpanded = pmoToggle && pmoToggle.getAttribute('data-state') === 'expanded';
+                
+                // Show the container if at least one of them is expanded
+                if (isQehsExpanded || isPmoExpanded) {
+                    childrenContainer.style.display = 'flex';
+                } else {
+                    childrenContainer.style.display = 'none';
                 }
             }
             closeAllChildren(nodeId) {
@@ -275,38 +255,37 @@
                     });
                     level.style.display = 'none';
                 });
-                
+
                 // Handle QEHS and PMO children
                 if (nodeId === 'qehs' || nodeId === 'pmo') {
                     const targetGroup = document.querySelector(`.children-group.${nodeId === 'qehs' ? 'qehs' : 'pmo'}-side`);
-                    const otherGroup = document.querySelector(`.children-group.${nodeId === 'qehs' ? 'pmo' : 'qehs'}-side`);
-                    const otherToggle = document.querySelector(`#${nodeId === 'qehs' ? 'pmo' : 'qehs'} .toggle`);
                     
                     if (targetGroup) {
                         targetGroup.style.display = 'none';
                     }
-                    
-                    // Check if the other group is also collapsed
-                    const isOtherExpanded = otherToggle && otherToggle.getAttribute('data-state') === 'expanded';
-                    const isOtherVisible = otherGroup && getComputedStyle(otherGroup).display !== 'none';
-                    
-                    if (!isOtherExpanded || !isOtherVisible) {
-                        const childrenContainer = document.getElementById('children-container');
-                        if (childrenContainer) {
-                            childrenContainer.style.display = 'none';
-                        }
-                    }
                 }
-                
-                // Handle exec - hide entire children container
+
+                // Handle exec - hide entire children container and reset toggles
                 if (nodeId === 'exec') {
                     const childrenContainer = document.getElementById('children-container');
                     const qehsGroup = document.querySelector('.children-group.qehs-side');
                     const pmoGroup = document.querySelector('.children-group.pmo-side');
-                    
+                    const qehsToggle = document.querySelector('#qehs .toggle');
+                    const pmoToggle = document.querySelector('#pmo .toggle');
+
                     if (childrenContainer) childrenContainer.style.display = 'none';
                     if (qehsGroup) qehsGroup.style.display = 'none';
                     if (pmoGroup) pmoGroup.style.display = 'none';
+                    
+                    // Collapse QEHS and PMO branches
+                    if (qehsToggle) {
+                        qehsToggle.textContent = "▶";
+                        qehsToggle.setAttribute('data-state', 'collapsed');
+                    }
+                    if (pmoToggle) {
+                        pmoToggle.textContent = "▶";
+                        pmoToggle.setAttribute('data-state', 'collapsed');
+                    }
                 }
             }
             isElementVisible(element) {
@@ -318,25 +297,6 @@
                     style.opacity !== '0' &&
                     rect.width > 0 &&
                     rect.height > 0;
-            }
-            closeQEHS() {
-                // Close QEHS section when PMO is clicked
-                const qehsToggle = document.querySelector('#qehs .toggle');
-                if (qehsToggle && qehsToggle.getAttribute('data-state') === 'expanded') {
-                    this.closeAllChildren('qehs');
-                    qehsToggle.textContent = "▶";
-                    qehsToggle.setAttribute('data-state', 'collapsed');
-                }
-            }
-            
-            closePMO() {
-                // Close PMO section when QEHS is clicked
-                const pmoToggle = document.querySelector('#pmo .toggle');
-                if (pmoToggle && pmoToggle.getAttribute('data-state') === 'expanded') {
-                    this.closeAllChildren('pmo');
-                    pmoToggle.textContent = "▶";
-                    pmoToggle.setAttribute('data-state', 'collapsed');
-                }
             }
             debounce(func, wait) {
                 let timeout;

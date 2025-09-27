@@ -408,6 +408,7 @@
         <div class="container">
             <!-- Hero Section -->
             <h1 class="section-title">Excellence in Every Standard</h1>
+            <p class="section-subtitle">Committed to the highest quality and safety standards</p>
 
             <!-- Policies Section -->
             <div id="policy" class="policies-grid">
@@ -478,27 +479,60 @@
                         </div>
                         <div class="certification-caption">ISO 9001:2015 Certified</div>
                         <div class="certification-details">Quality Management Systems Excellence</div>
+                        <button class="view-cert-btn" onclick="openModal('modal1', 'ISO 9001:2015 Certificate', '../media/isocer2.png')">
+                            <i class="fas fa-eye"></i>
+                            View Certificate
+                        </button>
                     </div>
                     <div class="certification-card">
                         <div class="certification-image">
                             <img src="../media/isocer.png" alt="ISO 45001:2018 Certificate">
                         </div>
                         <div class="certification-caption">ISO 45001:2018 Certified</div>
-                        <div class="certification-details">Occupational Health &amp; Safety Leadership</div>
+                        <div class="certification-details">Occupational Health & Safety Leadership</div>
+                        <button class="view-cert-btn" onclick="openModal('modal2', 'ISO 45001:2018 Certificate', '../media/isocer.png')">
+                            <i class="fas fa-eye"></i>
+                            View Certificate
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Closing Statement -->
             <div class="closing-statement">
-                At SMART Cell, safety and quality are not just policies – they are the foundation of our culture and the
+                At SMART Cell, safety and quality are not just policies — they are the foundation of our culture and the
                 cornerstone of our success.
             </div>
         </div>
     </section>
 
+    <!-- Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">ISO 9001:2015 Certificate</h3>
+                <button class="close" onclick="closeModal('modal1')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="modal1-image" src="" alt="Certificate" class="modal-image">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">ISO 45001:2018 Certificate</h3>
+                <button class="close" onclick="closeModal('modal2')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="modal2-image" src="" alt="Certificate" class="modal-image">
+            </div>
+        </div>
+    </div>
+
     <!-- Organization Chart Section -->
-   <section id="orgchart">
+    <section id="orgchart">
         <div class="container">
             <div class="header">
                 <h1>Organization Chart</h1>

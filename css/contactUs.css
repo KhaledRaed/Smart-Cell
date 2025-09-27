@@ -289,6 +289,7 @@
         }
 
         .map-container {
+            transition: 0.3s;
             height: 400px;
             background: #f0f0f0;
             display: flex;
@@ -296,6 +297,14 @@
             justify-content: center;
             color: #666;
             font-size: 1.1rem;
+        }
+        .map-container:hover{
+            transform: scale(1.1);
+        }
+
+        .map-container img{
+            object-fit: fill;
+            width: 100%;
         }
 
         @media (max-width: 768px) {

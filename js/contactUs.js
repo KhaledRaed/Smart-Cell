@@ -17,31 +17,31 @@
         });
 
         // Google Maps
-        function initMap() {
-            const locations = [
-                { name: "Cairo, Egypt", position: { lat: 30.0444, lng: 31.2357 } },
-                { name: "Amman, Jordan", position: { lat: 31.9539, lng: 35.9106 } },
-                { name: "Riyadh, Saudi Arabia", position: { lat: 24.7136, lng: 46.6753 } }
-            ];
+        // function initMap() {
+        //     const locations = [
+        //         { name: "Cairo, Egypt", position: { lat: 30.0444, lng: 31.2357 } },
+        //         { name: "Amman, Jordan", position: { lat: 31.9539, lng: 35.9106 } },
+        //         { name: "Riyadh, Saudi Arabia", position: { lat: 24.7136, lng: 46.6753 } }
+        //     ];
 
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 5,
-                center: { lat: 27.5, lng: 37.5 },
-            });
+        //     const map = new google.maps.Map(document.getElementById("map"), {
+        //         zoom: 5,
+        //         center: { lat: 27.5, lng: 37.5 },
+        //     });
 
-            locations.forEach(loc => {
-                const marker = new google.maps.Marker({
-                    position: loc.position,
-                    map: map,
-                    title: loc.name,
-                });
+        //     locations.forEach(loc => {
+        //         const marker = new google.maps.Marker({
+        //             position: loc.position,
+        //             map: map,
+        //             title: loc.name,
+        //         });
 
-                const infoWindow = new google.maps.InfoWindow({
-                    content: `<h3>${loc.name}</h3>`,
-                });
+        //         const infoWindow = new google.maps.InfoWindow({
+        //             content: `<h3>${loc.name}</h3>`,
+        //         });
 
-                marker.addListener("click", () => {
-                    infoWindow.open(map, marker);
-                });
-            });
-        }
+        //         marker.addListener("click", () => {
+        //             infoWindow.open(map, marker);
+        //         });
+        //     });
+        // }
